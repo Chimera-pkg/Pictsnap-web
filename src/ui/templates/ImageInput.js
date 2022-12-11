@@ -102,7 +102,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
   );
 }
 
-export function ImageSquareTemp({ value, onChange, deleteItem }) {
+export function ImageSquareInput({ value, onChange, deleteItem }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -212,7 +212,7 @@ export function ImageSquareTemp({ value, onChange, deleteItem }) {
   );
 }
 
-export function ImageSquareRoundedTemp({ value, onChange, deleteItem }) {
+export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -330,7 +330,7 @@ export function ImageSquareRoundedTemp({ value, onChange, deleteItem }) {
   );
 }
 
-export function ImageCircleTemp({ value, onChange, deleteItem }) {
+export function ImageCircleInput({ value, onChange, deleteItem }) {
   const [show, setShow] = useState(true);
   return (
     <div>

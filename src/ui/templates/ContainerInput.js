@@ -92,7 +92,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
   );
 }
 
-export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
+export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
   const [show, setShow] = useState(true);
 
   return (
@@ -191,7 +191,7 @@ export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
   );
 }
 
-export function ContainerCircleInput(value, onChange, deleteItem) {
+export function ContainerCircleInput({ value, onChange, deleteItem }) {
   const [show, setShow] = useState(true);
   return (
     <div>

@@ -1,3 +1,4 @@
+import "./index.css";
 import { AppContextProvider } from "./context/AppContextProvider";
 import { UserContext } from "./context/UserContext";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";

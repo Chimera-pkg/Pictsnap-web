@@ -2,7 +2,7 @@ import { useState } from "react";
 import { InputComponentDefault } from "../components/InputComponent";
 import { LabelInputComponent } from "../components/LabelInputComponent";
 
-export function FrameInput(value, onChange, deleteItem) {
+export function FrameInput({ value, onChange, deleteItem }) {
   const [show, setShow] = useState(true);
   return (
     <div>
