@@ -2,12 +2,12 @@ import { useState } from "react";
 import { InputComponentDefault } from "../components/InputComponent";
 import { LabelInputComponent } from "../components/LabelInputComponent";
 
-export function ContainerSquareInput({ value, onChange, deleteItem }) {
+export function ImageLogoInput({ value, onChange, deleteItem }) {
   const [show, setShow] = useState(true);
   return (
     <div>
       <LabelInputComponent
-        title="Container Square"
+        title="Image Logo"
         show={show}
         setShow={setShow}
         deleteItem={deleteItem}
@@ -17,7 +17,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
       >
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="top"
+            id="title-value"
             title="Top"
             type="number"
             onChange={() => {}}
@@ -25,7 +25,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="right"
+            id="title-value"
             title="Right"
             type="number"
             onChange={() => {}}
@@ -33,7 +33,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="bottom"
+            id="title-value"
             title="Bottom"
             type="number"
             onChange={() => {}}
@@ -41,7 +41,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="left"
+            id="title-value"
             title="Left"
             type="number"
             onChange={() => {}}
@@ -51,7 +51,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="width"
+            id="title-value"
             title="Width"
             type="number"
             onChange={() => {}}
@@ -59,7 +59,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="height"
+            id="title-value"
             title="Height"
             type="number"
             onChange={() => {}}
@@ -69,7 +69,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="groupColor"
+            id="title-value"
             title="Color"
             type="number"
             onChange={() => {}}
@@ -77,13 +77,23 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             required={true}
           />
         </div>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-3 gap-4">
+          <div className="cols-span-2">
+            <InputComponentDefault
+              id="title-value"
+              title="link Image"
+              type="text"
+              onChange={() => {}}
+              placeholder="http://image.com"
+              required={true}
+            />
+          </div>
           <InputComponentDefault
-            id="border"
-            title="Border"
+            id="title-value"
+            title="Editing Controller"
             type="number"
             onChange={() => {}}
-            placeholder="px"
+            placeholder=""
             required={true}
           />
         </div>
@@ -92,13 +102,12 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
   );
 }
 
-export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
+export function ImageSquareTemp({ value, onChange, deleteItem }) {
   const [show, setShow] = useState(true);
-
   return (
     <div>
       <LabelInputComponent
-        title="Container Square Rounded"
+        title="Image Square"
         show={show}
         setShow={setShow}
         deleteItem={deleteItem}
@@ -108,7 +117,7 @@ export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
       >
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="top"
+            id="title-value"
             title="Top"
             type="number"
             onChange={() => {}}
@@ -116,7 +125,7 @@ export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
             required={true}
           />
           <InputComponentDefault
-            id="right"
+            id="title-value"
             title="Right"
             type="number"
             onChange={() => {}}
@@ -124,7 +133,7 @@ export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
             required={true}
           />
           <InputComponentDefault
-            id="bottom"
+            id="title-value"
             title="Bottom"
             type="number"
             onChange={() => {}}
@@ -132,7 +141,7 @@ export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
             required={true}
           />
           <InputComponentDefault
-            id="left"
+            id="title-value"
             title="Left"
             type="number"
             onChange={() => {}}
@@ -142,7 +151,7 @@ export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="width"
+            id="title-value"
             title="Width"
             type="number"
             onChange={() => {}}
@@ -150,7 +159,7 @@ export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
             required={true}
           />
           <InputComponentDefault
-            id="height"
+            id="title-value"
             title="Height"
             type="number"
             onChange={() => {}}
@@ -160,7 +169,7 @@ export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="groupColor"
+            id="title-value"
             title="Color"
             type="number"
             onChange={() => {}}
@@ -170,7 +179,117 @@ export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="border"
+            id="title-value"
+            title="Border"
+            type="number"
+            onChange={() => {}}
+            placeholder="px"
+            required={true}
+          />
+        </div>
+        <div className="grid grid-cols-3 gap-4">
+          <div className="cols-span-2">
+            <InputComponentDefault
+              id="title-value"
+              title="link Image"
+              type="text"
+              onChange={() => {}}
+              placeholder="http://image.com"
+              required={true}
+            />
+          </div>
+          <InputComponentDefault
+            id="title-value"
+            title="Editing Controller"
+            type="number"
+            onChange={() => {}}
+            placeholder=""
+            required={true}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ImageSquareRoundedTemp({ value, onChange, deleteItem }) {
+  const [show, setShow] = useState(true);
+  return (
+    <div>
+      <LabelInputComponent
+        title="Image Square Rounded"
+        show={show}
+        setShow={setShow}
+        deleteItem={deleteItem}
+      />
+      <div
+        className={`overflow-hidden duration-150 ${show ? "h-full" : "h-0"}`}
+      >
+        <div className="grid grid-cols-4 gap-4">
+          <InputComponentDefault
+            id="title-value"
+            title="Top"
+            type="number"
+            onChange={() => {}}
+            placeholder="px"
+            required={true}
+          />
+          <InputComponentDefault
+            id="title-value"
+            title="Right"
+            type="number"
+            onChange={() => {}}
+            placeholder="px"
+            required={true}
+          />
+          <InputComponentDefault
+            id="title-value"
+            title="Bottom"
+            type="number"
+            onChange={() => {}}
+            placeholder="px"
+            required={true}
+          />
+          <InputComponentDefault
+            id="title-value"
+            title="Left"
+            type="number"
+            onChange={() => {}}
+            placeholder="px"
+            required={true}
+          />
+        </div>
+        <div className="grid grid-cols-4 gap-4">
+          <InputComponentDefault
+            id="title-value"
+            title="Width"
+            type="number"
+            onChange={() => {}}
+            placeholder="px"
+            required={true}
+          />
+          <InputComponentDefault
+            id="title-value"
+            title="Height"
+            type="number"
+            onChange={() => {}}
+            placeholder="px"
+            required={true}
+          />
+        </div>
+        <div className="grid grid-cols-4 gap-4">
+          <InputComponentDefault
+            id="title-value"
+            title="Color"
+            type="number"
+            onChange={() => {}}
+            placeholder="px"
+            required={true}
+          />
+        </div>
+        <div className="grid grid-cols-4 gap-4">
+          <InputComponentDefault
+            id="title-value"
             title="Border"
             type="number"
             onChange={() => {}}
@@ -178,7 +297,7 @@ export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
             required={true}
           />
           <InputComponentDefault
-            id="rounded"
+            id="title-value"
             title="Rounded"
             type="number"
             onChange={() => {}}
@@ -186,17 +305,37 @@ export function ContainerSquareRoundedInput(value, onChange, deleteItem) {
             required={true}
           />
         </div>
+        <div className="grid grid-cols-3 gap-4">
+          <div className="cols-span-2">
+            <InputComponentDefault
+              id="title-value"
+              title="link Image"
+              type="text"
+              onChange={() => {}}
+              placeholder="http://image.com"
+              required={true}
+            />
+          </div>
+          <InputComponentDefault
+            id="title-value"
+            title="Editing Controller"
+            type="number"
+            onChange={() => {}}
+            placeholder=""
+            required={true}
+          />
+        </div>
       </div>
     </div>
   );
 }
 
-export function ContainerCircleInput(value, onChange, deleteItem) {
+export function ImageCircleTemp({ value, onChange, deleteItem }) {
   const [show, setShow] = useState(true);
   return (
     <div>
       <LabelInputComponent
-        title="Container Circle"
+        title="Image Circle"
         show={show}
         setShow={setShow}
         deleteItem={deleteItem}
@@ -206,7 +345,7 @@ export function ContainerCircleInput(value, onChange, deleteItem) {
       >
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="top"
+            id="title-value"
             title="Top"
             type="number"
             onChange={() => {}}
@@ -214,7 +353,7 @@ export function ContainerCircleInput(value, onChange, deleteItem) {
             required={true}
           />
           <InputComponentDefault
-            id="right"
+            id="title-value"
             title="Right"
             type="number"
             onChange={() => {}}
@@ -222,7 +361,7 @@ export function ContainerCircleInput(value, onChange, deleteItem) {
             required={true}
           />
           <InputComponentDefault
-            id="bottom"
+            id="title-value"
             title="Bottom"
             type="number"
             onChange={() => {}}
@@ -230,7 +369,7 @@ export function ContainerCircleInput(value, onChange, deleteItem) {
             required={true}
           />
           <InputComponentDefault
-            id="left"
+            id="title-value"
             title="Left"
             type="number"
             onChange={() => {}}
@@ -240,7 +379,7 @@ export function ContainerCircleInput(value, onChange, deleteItem) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="width"
+            id="title-value"
             title="Width"
             type="number"
             onChange={() => {}}
@@ -248,7 +387,7 @@ export function ContainerCircleInput(value, onChange, deleteItem) {
             required={true}
           />
           <InputComponentDefault
-            id="height"
+            id="title-value"
             title="Height"
             type="number"
             onChange={() => {}}
@@ -258,7 +397,7 @@ export function ContainerCircleInput(value, onChange, deleteItem) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="groupColor"
+            id="title-value"
             title="Color"
             type="number"
             onChange={() => {}}
@@ -268,11 +407,31 @@ export function ContainerCircleInput(value, onChange, deleteItem) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="border"
+            id="title-value"
             title="Border"
             type="number"
             onChange={() => {}}
             placeholder="px"
+            required={true}
+          />
+        </div>
+        <div className="grid grid-cols-3 gap-4">
+          <div className="cols-span-2">
+            <InputComponentDefault
+              id="title-value"
+              title="link Image"
+              type="text"
+              onChange={() => {}}
+              placeholder="http://image.com"
+              required={true}
+            />
+          </div>
+          <InputComponentDefault
+            id="title-value"
+            title="Editing Controller"
+            type="number"
+            onChange={() => {}}
+            placeholder=""
             required={true}
           />
         </div>

@@ -2,12 +2,12 @@ import { useState } from "react";
 import { InputComponentDefault } from "../components/InputComponent";
 import { LabelInputComponent } from "../components/LabelInputComponent";
 
-export function FrameInput(value, onChange, deleteItem) {
+export function TextInput({ value, onChange, deleteItem }) {
   const [show, setShow] = useState(true);
   return (
     <div>
       <LabelInputComponent
-        title="Frame"
+        title="Text"
         show={show}
         setShow={setShow}
         deleteItem={deleteItem}
@@ -79,11 +79,55 @@ export function FrameInput(value, onChange, deleteItem) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="svg"
-            title="SVG"
+            id="fontSize"
+            title="Font Size"
+            type="number"
+            onChange={() => {}}
+            placeholder="px"
+            required={true}
+          />
+          <InputComponentDefault
+            id="textAlign"
+            title="Text Align"
             type="text"
             onChange={() => {}}
-            placeholder="<svg></svg>"
+            placeholder=""
+            required={true}
+          />
+          <InputComponentDefault
+            id="fontWeight"
+            title="Font Weight"
+            type="text"
+            onChange={() => {}}
+            placeholder=""
+            required={true}
+          />
+          <InputComponentDefault
+            id="fontFamily"
+            title="Font Family"
+            type="text"
+            onChange={() => {}}
+            placeholder=""
+            required={true}
+          />
+        </div>
+        <div className="grid grid-cols-3 gap-4">
+          <div className="cols-span-2">
+            <InputComponentDefault
+              id="text"
+              title="Text"
+              type="text"
+              onChange={() => {}}
+              placeholder=""
+              required={true}
+            />
+          </div>
+          <InputComponentDefault
+            id="textController"
+            title="Editing Controller"
+            type="number"
+            onChange={() => {}}
+            placeholder=""
             required={true}
           />
         </div>
