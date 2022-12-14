@@ -95,7 +95,7 @@ export function CreateTemplatePage() {
           Hallo 👋<span className="font-normal"></span>
         </h1>
 
-        <div className="overflow-auto">
+        <div className="overflow-auto hidden">
           <TemplateDesign type={TypeTemplates[typeTemplate]} />
         </div>
 
@@ -248,7 +248,7 @@ export function CreateTemplatePage() {
                     />
                   );
                   break;
-                case "contianer_square_rounded_comp":
+                case "container_square_rounded_comp":
                   return (
                     <ContainerSquareRoundedInput
                       value=""

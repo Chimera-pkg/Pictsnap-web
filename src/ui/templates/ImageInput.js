@@ -17,7 +17,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
       >
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="top"
             title="Top"
             type="number"
             onChange={() => {}}
@@ -25,7 +25,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="right"
             title="Right"
             type="number"
             onChange={() => {}}
@@ -33,7 +33,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="bottom"
             title="Bottom"
             type="number"
             onChange={() => {}}
@@ -41,7 +41,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="left"
             title="Left"
             type="number"
             onChange={() => {}}
@@ -51,7 +51,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="width"
             title="Width"
             type="number"
             onChange={() => {}}
@@ -59,7 +59,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="height"
             title="Height"
             type="number"
             onChange={() => {}}
@@ -69,7 +69,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="groupColor"
             title="Color"
             type="number"
             onChange={() => {}}
@@ -80,7 +80,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
         <div className="grid grid-cols-3 gap-4">
           <div className="cols-span-2">
             <InputComponentDefault
-              id="title-value"
+              id="src"
               title="link Image"
               type="text"
               onChange={() => {}}
@@ -89,7 +89,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             />
           </div>
           <InputComponentDefault
-            id="title-value"
+            id="imageEditingController"
             title="Editing Controller"
             type="number"
             onChange={() => {}}
@@ -117,7 +117,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
       >
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="top"
             title="Top"
             type="number"
             onChange={() => {}}
@@ -125,7 +125,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="right"
             title="Right"
             type="number"
             onChange={() => {}}
@@ -133,7 +133,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="bottom"
             title="Bottom"
             type="number"
             onChange={() => {}}
@@ -141,7 +141,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="left"
             title="Left"
             type="number"
             onChange={() => {}}
@@ -151,7 +151,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="width"
             title="Width"
             type="number"
             onChange={() => {}}
@@ -159,7 +159,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="height"
             title="Height"
             type="number"
             onChange={() => {}}
@@ -169,7 +169,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="groupColor"
             title="Color"
             type="number"
             onChange={() => {}}
@@ -179,7 +179,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="border"
             title="Border"
             type="number"
             onChange={() => {}}
@@ -190,7 +190,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
         <div className="grid grid-cols-3 gap-4">
           <div className="cols-span-2">
             <InputComponentDefault
-              id="title-value"
+              id="src"
               title="link Image"
               type="text"
               onChange={() => {}}
@@ -199,7 +199,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             />
           </div>
           <InputComponentDefault
-            id="title-value"
+            id="imageEditingController"
             title="Editing Controller"
             type="number"
             onChange={() => {}}
@@ -227,7 +227,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
       >
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="top"
             title="Top"
             type="number"
             onChange={() => {}}
@@ -235,7 +235,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="right"
             title="Right"
             type="number"
             onChange={() => {}}
@@ -243,7 +243,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="bottom"
             title="Bottom"
             type="number"
             onChange={() => {}}
@@ -251,7 +251,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="left"
             title="Left"
             type="number"
             onChange={() => {}}
@@ -261,7 +261,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="width"
             title="Width"
             type="number"
             onChange={() => {}}
@@ -269,7 +269,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="height"
             title="Height"
             type="number"
             onChange={() => {}}
@@ -279,7 +279,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="groupColor"
             title="Color"
             type="number"
             onChange={() => {}}
@@ -289,7 +289,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="border"
             title="Border"
             type="number"
             onChange={() => {}}
@@ -297,7 +297,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="rounded"
             title="Rounded"
             type="number"
             onChange={() => {}}
@@ -308,7 +308,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
         <div className="grid grid-cols-3 gap-4">
           <div className="cols-span-2">
             <InputComponentDefault
-              id="title-value"
+              id="src"
               title="link Image"
               type="text"
               onChange={() => {}}
@@ -317,7 +317,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             />
           </div>
           <InputComponentDefault
-            id="title-value"
+            id="imageEditingController"
             title="Editing Controller"
             type="number"
             onChange={() => {}}
@@ -345,7 +345,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
       >
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="top"
             title="Top"
             type="number"
             onChange={() => {}}
@@ -353,7 +353,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="right"
             title="Right"
             type="number"
             onChange={() => {}}
@@ -361,7 +361,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="bottom"
             title="Bottom"
             type="number"
             onChange={() => {}}
@@ -369,7 +369,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="left"
             title="Left"
             type="number"
             onChange={() => {}}
@@ -379,7 +379,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="width"
             title="Width"
             type="number"
             onChange={() => {}}
@@ -387,7 +387,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             required={true}
           />
           <InputComponentDefault
-            id="title-value"
+            id="height"
             title="Height"
             type="number"
             onChange={() => {}}
@@ -397,7 +397,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="groupColor"
             title="Color"
             type="number"
             onChange={() => {}}
@@ -407,7 +407,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
         </div>
         <div className="grid grid-cols-4 gap-4">
           <InputComponentDefault
-            id="title-value"
+            id="border"
             title="Border"
             type="number"
             onChange={() => {}}
@@ -418,7 +418,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
         <div className="grid grid-cols-3 gap-4">
           <div className="cols-span-2">
             <InputComponentDefault
-              id="title-value"
+              id="src"
               title="link Image"
               type="text"
               onChange={() => {}}
@@ -427,7 +427,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             />
           </div>
           <InputComponentDefault
-            id="title-value"
+            id="imageEditingController"
             title="Editing Controller"
             type="number"
             onChange={() => {}}
