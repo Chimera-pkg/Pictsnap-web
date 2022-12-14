@@ -1,3 +1,3 @@
-export function FrameTemp() {
+export function FrameTemp({ item }) {
   return <div></div>;
 }

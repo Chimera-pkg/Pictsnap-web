@@ -33,9 +33,9 @@ export function CreateTemplatePage() {
 
   const { loading, setLoading } = useContext(LoadingContext);
 
-  const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[0].id);
+  const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[0]);
   const [components, setComponents] = useState([]);
-  const [tempSelectComp, setTempSelectComp] = useState(itemComponents[0].id);
+  const [tempSelectComp, setTempSelectComp] = useState(itemComponents[0]);
 
   const [colors, setColors] = useState([
     "0F172A",
@@ -107,8 +107,11 @@ export function CreateTemplatePage() {
           Hallo 👋<span className="font-normal"></span>
         </h1>
 
-        <div className="overflow-auto hidden">
-          <TemplateDesign type={TypeTemplates[typeTemplate]} />
+        <div className="overflow-auto w-96 h-56 mx-auto">
+          <TemplateDesign
+            type={TypeTemplates[typeTemplate.id]}
+            components={components}
+          />
         </div>
 
         <form className="mt-6" onSubmit={handleSubmit}>
