@@ -22,6 +22,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.top}
             required={true}
           />
           <InputComponentDefault
@@ -30,6 +31,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.right}
             required={true}
           />
           <InputComponentDefault
@@ -38,6 +40,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.bottom}
             required={true}
           />
           <InputComponentDefault
@@ -46,6 +49,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.left}
             required={true}
           />
         </div>
@@ -56,6 +60,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.width}
             required={true}
           />
           <InputComponentDefault
@@ -64,6 +69,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.height}
             required={true}
           />
         </div>
@@ -74,6 +80,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.groupColor}
             required={true}
           />
         </div>
@@ -85,6 +92,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
               type="text"
               onChange={() => {}}
               placeholder="http://image.com"
+              value={value.src}
               required={true}
             />
           </div>
@@ -94,6 +102,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder=""
+            value={value.imageEditingController}
             required={true}
           />
         </div>
@@ -122,6 +131,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.top}
             required={true}
           />
           <InputComponentDefault
@@ -130,6 +140,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.right}
             required={true}
           />
           <InputComponentDefault
@@ -138,6 +149,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.bottom}
             required={true}
           />
           <InputComponentDefault
@@ -146,6 +158,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.left}
             required={true}
           />
         </div>
@@ -156,6 +169,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.width}
             required={true}
           />
           <InputComponentDefault
@@ -164,6 +178,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.height}
             required={true}
           />
         </div>
@@ -174,6 +189,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.groupColor}
             required={true}
           />
         </div>
@@ -184,6 +200,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.border}
             required={true}
           />
         </div>
@@ -195,6 +212,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
               type="text"
               onChange={() => {}}
               placeholder="http://image.com"
+              value={value.src}
               required={true}
             />
           </div>
@@ -204,6 +222,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder=""
+            value={value.imageEditingController}
             required={true}
           />
         </div>
@@ -232,6 +251,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.top}
             required={true}
           />
           <InputComponentDefault
@@ -240,6 +260,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.right}
             required={true}
           />
           <InputComponentDefault
@@ -248,6 +269,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.bottom}
             required={true}
           />
           <InputComponentDefault
@@ -256,6 +278,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.left}
             required={true}
           />
         </div>
@@ -266,6 +289,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.width}
             required={true}
           />
           <InputComponentDefault
@@ -274,6 +298,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.height}
             required={true}
           />
         </div>
@@ -284,6 +309,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.groupColor}
             required={true}
           />
         </div>
@@ -294,6 +320,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.border}
             required={true}
           />
           <InputComponentDefault
@@ -302,6 +329,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.rounded}
             required={true}
           />
         </div>
@@ -313,6 +341,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
               type="text"
               onChange={() => {}}
               placeholder="http://image.com"
+              value={value.src}
               required={true}
             />
           </div>
@@ -322,6 +351,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder=""
+            value={value.imageEditingController}
             required={true}
           />
         </div>
@@ -350,6 +380,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.top}
             required={true}
           />
           <InputComponentDefault
@@ -358,6 +389,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.right}
             required={true}
           />
           <InputComponentDefault
@@ -366,6 +398,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.bottom}
             required={true}
           />
           <InputComponentDefault
@@ -374,6 +407,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.left}
             required={true}
           />
         </div>
@@ -384,6 +418,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.width}
             required={true}
           />
           <InputComponentDefault
@@ -392,6 +427,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.height}
             required={true}
           />
         </div>
@@ -402,6 +438,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.groupColor}
             required={true}
           />
         </div>
@@ -412,6 +449,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.border}
             required={true}
           />
         </div>
@@ -423,6 +461,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
               type="text"
               onChange={() => {}}
               placeholder="http://image.com"
+              value={value.src}
               required={true}
             />
           </div>
@@ -432,6 +471,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder=""
+            value={value.imageEditingController}
             required={true}
           />
         </div>

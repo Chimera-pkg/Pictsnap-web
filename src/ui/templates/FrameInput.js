@@ -22,6 +22,7 @@ export function FrameInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.top}
             required={true}
           />
           <InputComponentDefault
@@ -30,6 +31,7 @@ export function FrameInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.right}
             required={true}
           />
           <InputComponentDefault
@@ -38,6 +40,7 @@ export function FrameInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.bottom}
             required={true}
           />
           <InputComponentDefault
@@ -46,6 +49,7 @@ export function FrameInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.left}
             required={true}
           />
         </div>
@@ -56,6 +60,7 @@ export function FrameInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.width}
             required={true}
           />
           <InputComponentDefault
@@ -64,6 +69,7 @@ export function FrameInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.height}
             required={true}
           />
         </div>
@@ -74,6 +80,7 @@ export function FrameInput({ value, onChange, deleteItem }) {
             type="number"
             onChange={() => {}}
             placeholder="px"
+            value={value.groupColor}
             required={true}
           />
         </div>
@@ -84,6 +91,7 @@ export function FrameInput({ value, onChange, deleteItem }) {
             type="text"
             onChange={() => {}}
             placeholder="<svg></svg>"
+            value={value.svg}
             required={true}
           />
         </div>

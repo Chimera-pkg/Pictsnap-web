@@ -181,11 +181,11 @@ export function CreateTemplatePage() {
               </div>
             </div>
             {components.map((item, index) => {
-              switch (item) {
+              switch (item.id) {
                 case "frame_comp":
                   return (
                     <FrameInput
-                      value=""
+                      value={item}
                       onChange={() => {}}
                       deleteItem={() => {
                         handleRemoveItem(index);
@@ -196,7 +196,7 @@ export function CreateTemplatePage() {
                 case "image_logo_comp":
                   return (
                     <ImageLogoInput
-                      value=""
+                      value={item}
                       onChange={() => {}}
                       deleteItem={() => {
                         handleRemoveItem(index);
@@ -207,7 +207,7 @@ export function CreateTemplatePage() {
                 case "image_square_comp":
                   return (
                     <ImageSquareInput
-                      value=""
+                      value={item}
                       onChange={() => {}}
                       deleteItem={() => {
                         handleRemoveItem(index);
@@ -218,7 +218,7 @@ export function CreateTemplatePage() {
                 case "image_square_rounded_comp":
                   return (
                     <ImageSquareRoundedInput
-                      value=""
+                      value={item}
                       onChange={() => {}}
                       deleteItem={() => {
                         handleRemoveItem(index);
@@ -229,7 +229,7 @@ export function CreateTemplatePage() {
                 case "image_circle_comp":
                   return (
                     <ImageCircleInput
-                      value=""
+                      value={item}
                       onChange={() => {}}
                       deleteItem={() => {
                         handleRemoveItem(index);
@@ -240,7 +240,7 @@ export function CreateTemplatePage() {
                 case "container_square_comp":
                   return (
                     <ContainerSquareInput
-                      value=""
+                      value={item}
                       onChange={() => {}}
                       deleteItem={() => {
                         handleRemoveItem(index);
@@ -251,7 +251,7 @@ export function CreateTemplatePage() {
                 case "container_square_rounded_comp":
                   return (
                     <ContainerSquareRoundedInput
-                      value=""
+                      value={item}
                       onChange={() => {}}
                       deleteItem={() => {
                         handleRemoveItem(index);
@@ -262,7 +262,7 @@ export function CreateTemplatePage() {
                 case "container_circle_comp":
                   return (
                     <ContainerCircleInput
-                      value=""
+                      value={item}
                       onChange={() => {}}
                       deleteItem={() => {
                         handleRemoveItem(index);
@@ -273,7 +273,7 @@ export function CreateTemplatePage() {
                 case "text_comp":
                   return (
                     <TextInput
-                      value=""
+                      value={item}
                       onChange={() => {}}
                       deleteItem={() => {
                         handleRemoveItem(index);
@@ -288,8 +288,8 @@ export function CreateTemplatePage() {
             <SelectComponentDefault
               title="Tambah Komponen"
               id="addItem"
-              onChange={(item) => {
-                setTempSelectComp(item.target.value);
+              onChange={(index) => {
+                setTempSelectComp(itemComponents[index.target.value]);
               }}
               placeholder="Pilih Komponen"
               value={tempSelectComp}
