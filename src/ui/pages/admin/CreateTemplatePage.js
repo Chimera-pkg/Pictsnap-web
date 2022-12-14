@@ -49,20 +49,26 @@ export function CreateTemplatePage() {
     description: "",
   });
 
-  // function handleChange(event) {
-  //   setData({ ...data, [event.target.name]: event.target.value });
-  // }
-
   async function handleSubmit(event) {
     event.preventDefault();
     setLoading(true);
 
+    const data = [
+      ...components,
+      {
+        id: "colors_comp",
+        colors: colors,
+      },
+    ];
+
+    // console.log(data);
+
     setLoading(false);
 
-    setModalInformationLittle({
-      status: true,
-      description: `Template berhasil dibuat`,
-    });
+    // setModalInformationLittle({
+    //   status: true,
+    //   description: `Template berhasil dibuat`,
+    // });
   }
 
   const handleCloseModal = () => {
@@ -78,6 +84,12 @@ export function CreateTemplatePage() {
     const temp = [...components];
     temp.splice(idx, 1);
 
+    setComponents(temp);
+  };
+
+  const handleChangeProperty = (idx, event) => {
+    let temp = [...components];
+    temp[idx][event.target.name] = event.target.value;
     setComponents(temp);
   };
 
@@ -186,7 +198,9 @@ export function CreateTemplatePage() {
                   return (
                     <FrameInput
                       value={item}
-                      onChange={() => {}}
+                      onChange={(event) => {
+                        handleChangeProperty(index, event);
+                      }}
                       deleteItem={() => {
                         handleRemoveItem(index);
                       }}
@@ -197,7 +211,9 @@ export function CreateTemplatePage() {
                   return (
                     <ImageLogoInput
                       value={item}
-                      onChange={() => {}}
+                      onChange={(event) => {
+                        handleChangeProperty(index, event);
+                      }}
                       deleteItem={() => {
                         handleRemoveItem(index);
                       }}
@@ -208,7 +224,9 @@ export function CreateTemplatePage() {
                   return (
                     <ImageSquareInput
                       value={item}
-                      onChange={() => {}}
+                      onChange={(event) => {
+                        handleChangeProperty(index, event);
+                      }}
                       deleteItem={() => {
                         handleRemoveItem(index);
                       }}
@@ -219,7 +237,9 @@ export function CreateTemplatePage() {
                   return (
                     <ImageSquareRoundedInput
                       value={item}
-                      onChange={() => {}}
+                      onChange={(event) => {
+                        handleChangeProperty(index, event);
+                      }}
                       deleteItem={() => {
                         handleRemoveItem(index);
                       }}
@@ -230,7 +250,9 @@ export function CreateTemplatePage() {
                   return (
                     <ImageCircleInput
                       value={item}
-                      onChange={() => {}}
+                      onChange={(event) => {
+                        handleChangeProperty(index, event);
+                      }}
                       deleteItem={() => {
                         handleRemoveItem(index);
                       }}
@@ -241,7 +263,9 @@ export function CreateTemplatePage() {
                   return (
                     <ContainerSquareInput
                       value={item}
-                      onChange={() => {}}
+                      onChange={(event) => {
+                        handleChangeProperty(index, event);
+                      }}
                       deleteItem={() => {
                         handleRemoveItem(index);
                       }}
@@ -252,7 +276,9 @@ export function CreateTemplatePage() {
                   return (
                     <ContainerSquareRoundedInput
                       value={item}
-                      onChange={() => {}}
+                      onChange={(event) => {
+                        handleChangeProperty(index, event);
+                      }}
                       deleteItem={() => {
                         handleRemoveItem(index);
                       }}
@@ -263,7 +289,9 @@ export function CreateTemplatePage() {
                   return (
                     <ContainerCircleInput
                       value={item}
-                      onChange={() => {}}
+                      onChange={(event) => {
+                        handleChangeProperty(index, event);
+                      }}
                       deleteItem={() => {
                         handleRemoveItem(index);
                       }}
@@ -274,7 +302,9 @@ export function CreateTemplatePage() {
                   return (
                     <TextInput
                       value={item}
-                      onChange={() => {}}
+                      onChange={(event) => {
+                        handleChangeProperty(index, event);
+                      }}
                       deleteItem={() => {
                         handleRemoveItem(index);
                       }}
