@@ -121,7 +121,7 @@ export function CreateTemplatePage() {
                 title="Tipe Template"
                 id="typeTemplates"
                 onChange={(item) => {
-                  setTypeTemplate(parseInt(item.target.value));
+                  setTypeTemplate(TypeTemplates[item.target.value]);
                 }}
                 placeholder="Pilih Template"
                 value={typeTemplate}
