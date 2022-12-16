@@ -27,6 +27,7 @@ import {
 } from "src/ui/templates/ImageInput";
 import { FrameInput } from "src/ui/templates/FrameInput";
 import { TypeTemplates } from "src/shared/TypeTemplates";
+import { PosterTemplate } from "src/shared/TestTemplate";
 
 export function CreateTemplatePage() {
   const navigate = useNavigate();
@@ -34,7 +35,8 @@ export function CreateTemplatePage() {
   const { loading, setLoading } = useContext(LoadingContext);
 
   const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[0]);
-  const [components, setComponents] = useState([]);
+  // const [components, setComponents] = useState([]);
+  const [components, setComponents] = useState(PosterTemplate);
   const [tempSelectComp, setTempSelectComp] = useState(itemComponents[0]);
 
   const [colors, setColors] = useState([
@@ -107,7 +109,7 @@ export function CreateTemplatePage() {
           Hallo 👋<span className="font-normal"></span>
         </h1>
 
-        <div className="overflow-auto w-96 h-56 mx-auto">
+        <div className="overflow-auto mx-auto">
           <TemplateDesign
             type={TypeTemplates[typeTemplate.id]}
             components={components}

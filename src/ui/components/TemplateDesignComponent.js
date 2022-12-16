@@ -15,7 +15,7 @@ import {
 export function TemplateDesign({ type, components }) {
   return (
     <div
-      className={`w-[${type.logicWidth}px] h-[${type.logicHeight}px] duration-500 shadow-xl mx-auto relative`}
+      className={`overflow-hidden w-[${type.logicWidth}px] h-[${type.logicHeight}px] duration-500 shadow-xl mx-auto relative`}
     >
       <SwicthCase components={components} />
     </div>
