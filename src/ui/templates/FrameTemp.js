@@ -4,11 +4,6 @@ import { RatioTemplateContext } from "src/context/RatioTemplateContext";
 
 export function FrameTemp({ item }) {
   const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
-  const [width, setWeight] = useState(0);
-  const [height, setHeight] = useState(0);
-  const [newSvg, setNewSvg] = useState("");
-
-  const svg = item.svg;
 
   return (
     <div

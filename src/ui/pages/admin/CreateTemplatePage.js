@@ -106,7 +106,7 @@ export function CreateTemplatePage() {
       />
       <div className="lg:w-11/12 w-full lg:p-12 md:p-8 p-6 bg-white mt-5 rounded-lg shadow-lg">
         <h1 className="text-xl font-semibold">
-          Hallo 👋<span className="font-normal"></span>
+          Hallo Admin👋<span className="font-normal"></span>
         </h1>
 
         <div className="mx-auto">
