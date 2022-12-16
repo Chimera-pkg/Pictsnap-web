@@ -11,11 +11,16 @@ import {
   ImageSquareRoundedTemp,
   ImageSquareTemp,
 } from "../templates/ImageTemp";
+import { RatioTemplateContext } from "src/context/RatioTemplateContext";
+import { useContext } from "react";
 
 export function TemplateDesign({ type, components }) {
+  const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
   return (
     <div
-      className={`overflow-hidden w-[${type.logicWidth}px] h-[${type.logicHeight}px] duration-500 shadow-xl mx-auto relative`}
+      className={`overflow-hidden w-[${type.logicWidth * ratioTemplate}px] h-[${
+        type.logicHeight * ratioTemplate
+      }px] duration-500 shadow-xl mx-auto relative`}
     >
       <SwicthCase components={components} />
     </div>
