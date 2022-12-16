@@ -20,7 +20,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             id="top"
             title="Top"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.top}
             required={true}
@@ -29,7 +29,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             id="right"
             title="Right"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.right}
             required={true}
@@ -38,7 +38,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             id="bottom"
             title="Bottom"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.bottom}
             required={true}
@@ -47,7 +47,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             id="left"
             title="Left"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.left}
             required={true}
@@ -58,7 +58,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             id="width"
             title="Width"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.width}
             required={true}
@@ -67,7 +67,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             id="height"
             title="Height"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.height}
             required={true}
@@ -78,7 +78,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             id="groupColor"
             title="Color"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.groupColor}
             required={true}
@@ -89,7 +89,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             id="fontSize"
             title="Font Size"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.fontSize}
             required={true}
@@ -98,7 +98,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             id="textAlign"
             title="Text Align"
             type="text"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder=""
             value={value.textAlign}
             required={true}
@@ -107,7 +107,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             id="fontWeight"
             title="Font Weight"
             type="text"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder=""
             value={value.fontWeight}
             required={true}
@@ -116,7 +116,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             id="fontFamily"
             title="Font Family"
             type="text"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder=""
             value={value.fontFamily}
             required={true}
@@ -128,7 +128,7 @@ export function TextInput({ value, onChange, deleteItem }) {
               id="text"
               title="Text"
               type="text"
-              onChange={() => {}}
+              onChange={onChange}
               placeholder=""
               value={value.text}
               required={true}
@@ -138,7 +138,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             id="textController"
             title="Editing Controller"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder=""
             value={value.textController}
             required={true}

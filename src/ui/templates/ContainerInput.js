@@ -20,7 +20,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             id="top"
             title="Top"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.top}
             required={true}
@@ -29,7 +29,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             id="right"
             title="Right"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.right}
             required={true}
@@ -38,7 +38,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             id="bottom"
             title="Bottom"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.bottom}
             required={true}
@@ -47,7 +47,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             id="left"
             title="Left"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.left}
             required={true}
@@ -58,7 +58,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             id="width"
             title="Width"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.width}
             required={true}
@@ -67,7 +67,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             id="height"
             title="Height"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.height}
             required={true}
@@ -78,7 +78,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             id="groupColor"
             title="Color"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.groupColor}
             required={true}
@@ -89,7 +89,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             id="border"
             title="Border"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.border}
             required={true}
@@ -119,7 +119,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
             id="top"
             title="Top"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.top}
             required={true}
@@ -128,7 +128,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
             id="right"
             title="Right"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.right}
             required={true}
@@ -137,7 +137,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
             id="bottom"
             title="Bottom"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.bottom}
             required={true}
@@ -146,7 +146,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
             id="left"
             title="Left"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.left}
             required={true}
@@ -157,7 +157,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
             id="width"
             title="Width"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.width}
             required={true}
@@ -166,7 +166,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
             id="height"
             title="Height"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.height}
             required={true}
@@ -177,7 +177,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
             id="groupColor"
             title="Color"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.groupColor}
             required={true}
@@ -188,7 +188,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
             id="border"
             title="Border"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.border}
             required={true}
@@ -197,7 +197,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
             id="rounded"
             title="Rounded"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.rounded}
             required={true}
@@ -226,7 +226,7 @@ export function ContainerCircleInput({ value, onChange, deleteItem }) {
             id="top"
             title="Top"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.top}
             required={true}
@@ -235,7 +235,7 @@ export function ContainerCircleInput({ value, onChange, deleteItem }) {
             id="right"
             title="Right"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.right}
             required={true}
@@ -244,7 +244,7 @@ export function ContainerCircleInput({ value, onChange, deleteItem }) {
             id="bottom"
             title="Bottom"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.bottom}
             required={true}
@@ -253,7 +253,7 @@ export function ContainerCircleInput({ value, onChange, deleteItem }) {
             id="left"
             title="Left"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.left}
             required={true}
@@ -264,7 +264,7 @@ export function ContainerCircleInput({ value, onChange, deleteItem }) {
             id="width"
             title="Width"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.width}
             required={true}
@@ -273,7 +273,7 @@ export function ContainerCircleInput({ value, onChange, deleteItem }) {
             id="height"
             title="Height"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.height}
             required={true}
@@ -284,7 +284,7 @@ export function ContainerCircleInput({ value, onChange, deleteItem }) {
             id="groupColor"
             title="Color"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.groupColor}
             required={true}
@@ -295,7 +295,7 @@ export function ContainerCircleInput({ value, onChange, deleteItem }) {
             id="border"
             title="Border"
             type="number"
-            onChange={() => {}}
+            onChange={onChange}
             placeholder="px"
             value={value.border}
             required={true}
