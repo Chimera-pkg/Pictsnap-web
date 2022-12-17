@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { RatioTemplateContext } from "src/context/RatioTemplateContext";
 
-export function TextTemp({ item }) {
+export function TextTemp({ item, colors }) {
   const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
   return (
     <div
@@ -11,7 +11,7 @@ export function TextTemp({ item }) {
         item.bottom * ratioTemplate
       }px] w-[${item.width * ratioTemplate}px] h-[${
         item.height * ratioTemplate
-      }px] text-[#${item.color}] `}
+      }px] text-[#${colors[item.groupColor]}] `}
     >
       <p
         className={`text-[${item.fontSize * ratioTemplate}px] text-${

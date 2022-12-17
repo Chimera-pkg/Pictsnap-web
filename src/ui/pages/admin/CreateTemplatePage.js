@@ -113,6 +113,7 @@ export function CreateTemplatePage() {
           <TemplateDesign
             type={TypeTemplates[typeTemplate.id]}
             components={components}
+            colors={colors}
           />
         </div>
 

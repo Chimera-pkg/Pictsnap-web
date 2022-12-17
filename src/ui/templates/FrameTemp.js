@@ -2,7 +2,7 @@ import SVG from "react-inlinesvg";
 import { useContext, useState } from "react";
 import { RatioTemplateContext } from "src/context/RatioTemplateContext";
 
-export function FrameTemp({ item }) {
+export function FrameTemp({ item, colors }) {
   const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
 
   return (

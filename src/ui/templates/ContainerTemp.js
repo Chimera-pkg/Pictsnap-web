@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { RatioTemplateContext } from "src/context/RatioTemplateContext";
 
-export function ContainerSquareTemp({ item }) {
+export function ContainerSquareTemp({ item, colors }) {
   const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
 
   return (
@@ -12,14 +12,14 @@ export function ContainerSquareTemp({ item }) {
         item.bottom * ratioTemplate
       }px] w-[${item.width * ratioTemplate}px] h-[${
         item.height * ratioTemplate
-      }px] bg-[#${item.color}] border border-[#${item.borderColor}] border-[${
-        item.borderWidth * ratioTemplate
-      }px]`}
+      }px] bg-[#${colors[item.groupColor]}] border border-[#${
+        colors[item.groupColor]
+      }] border-[${item.border * ratioTemplate}px]`}
     ></div>
   );
 }
 
-export function ContainerSquareRoundedTemp({ item }) {
+export function ContainerSquareRoundedTemp({ item, colors }) {
   const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
 
   return (
@@ -30,16 +30,16 @@ export function ContainerSquareRoundedTemp({ item }) {
         item.bottom * ratioTemplate
       }px] w-[${item.width * ratioTemplate}px] h-[${
         item.height * ratioTemplate
-      }px] bg-[#${item.color}] rounded-[${
+      }px] bg-[#${colors[item.groupColor]}] rounded-[${
         item.rounded * ratioTemplate
-      }px] border border-[#${item.borderColor}] border-[${
-        item.borderWidth * ratioTemplate
+      }px] border border-[#${colors[item.groupColor]}] border-[${
+        item.border * ratioTemplate
       }px]`}
     ></div>
   );
 }
 
-export function ContainerCircleTemp({ item }) {
+export function ContainerCircleTemp({ item, colors }) {
   const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
 
   return (
@@ -50,9 +50,9 @@ export function ContainerCircleTemp({ item }) {
         item.bottom * ratioTemplate
       }px] w-[${item.width * ratioTemplate}px] h-[${
         item.height * ratioTemplate
-      }px] bg-[#${item.color}] rounded-full border border-[#${
-        item.borderColor
-      }] border-[${item.borderWidth * ratioTemplate}px]`}
+      }px] bg-[#${colors[item.groupColor]}] rounded-full border border-[#${
+        colors[item.groupColor]
+      }] border-[${item.border * ratioTemplate}px]`}
     ></div>
   );
 }

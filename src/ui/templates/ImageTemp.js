@@ -3,7 +3,7 @@ import example from "src/assets/images/example.jpg";
 import { useContext } from "react";
 import { RatioTemplateContext } from "src/context/RatioTemplateContext";
 
-export function ImageLogoTemp({ item }) {
+export function ImageLogoTemp({ item, colors }) {
   const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
   return (
     <div
@@ -13,7 +13,9 @@ export function ImageLogoTemp({ item }) {
         item.right * ratioTemplate
       }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
         item.width * ratioTemplate
-      }px] h-[${item.height * ratioTemplate}px] bg-[#${item.color}] `}
+      }px] h-[${item.height * ratioTemplate}px] bg-[#${
+        colors[item.groupColor]
+      }] `}
     >
       <img
         src={item.src == "" ? logo : item.src}
@@ -24,7 +26,7 @@ export function ImageLogoTemp({ item }) {
   );
 }
 
-export function ImageSquareTemp({ item }) {
+export function ImageSquareTemp({ item, colors }) {
   const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
 
   return (
@@ -36,9 +38,9 @@ export function ImageSquareTemp({ item }) {
       }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
         item.width * ratioTemplate
       }px] h-[${item.height * ratioTemplate}px] bg-[#${
-        item.color
-      }] border border-[#${item.borderColor}] border-[${
-        item.borderWidth * ratioTemplate
+        colors[item.groupColor]
+      }] border border-[#${colors[item.groupColor]}] border-[${
+        item.border * ratioTemplate
       }px]`}
     >
       <img
@@ -50,33 +52,7 @@ export function ImageSquareTemp({ item }) {
   );
 }
 
-export function ImageSquareRoundedTemp({ item }) {
-  const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
-
-  return (
-    <div
-      className={`absolute overflow-hidden left-[${
-        item.left * ratioTemplate
-      }px] top-[${item.top * ratioTemplate}px] right-[${
-        item.right * ratioTemplate
-      }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
-        item.width * ratioTemplate
-      }px] h-[${item.height * ratioTemplate}px] bg-[#${item.color}] rounded-[${
-        item.rounded * ratioTemplate
-      }px] border border-[#${item.borderColor}] border-[${
-        item.borderWidth * ratioTemplate
-      }px]`}
-    >
-      <img
-        src={item.src == "" ? example : item.src}
-        alt="image"
-        className="h-full w-auto m-auto"
-      />
-    </div>
-  );
-}
-
-export function ImageCircleTemp({ item }) {
+export function ImageSquareRoundedTemp({ item, colors }) {
   const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
 
   return (
@@ -88,9 +64,35 @@ export function ImageCircleTemp({ item }) {
       }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
         item.width * ratioTemplate
       }px] h-[${item.height * ratioTemplate}px] bg-[#${
-        item.color
-      }] rounded-full border border-[#${item.borderColor}] border-[${
-        item.borderWidth * ratioTemplate
+        colors[item.groupColor]
+      }] rounded-[${item.rounded * ratioTemplate}px] border border-[#${
+        colors[item.groupColor]
+      }] border-[${item.border * ratioTemplate}px]`}
+    >
+      <img
+        src={item.src == "" ? example : item.src}
+        alt="image"
+        className="h-full w-auto m-auto"
+      />
+    </div>
+  );
+}
+
+export function ImageCircleTemp({ item, colors }) {
+  const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
+
+  return (
+    <div
+      className={`absolute overflow-hidden left-[${
+        item.left * ratioTemplate
+      }px] top-[${item.top * ratioTemplate}px] right-[${
+        item.right * ratioTemplate
+      }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
+        item.width * ratioTemplate
+      }px] h-[${item.height * ratioTemplate}px] bg-[#${
+        colors[item.groupColor]
+      }] rounded-full border border-[#${colors[item.groupColor]}] border-[${
+        item.border * ratioTemplate
       }px]`}
     >
       <img
