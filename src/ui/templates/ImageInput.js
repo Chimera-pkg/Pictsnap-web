@@ -23,7 +23,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.top}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="right"
@@ -32,7 +32,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.right}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="bottom"
@@ -41,7 +41,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.bottom}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="left"
@@ -50,7 +50,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.left}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -61,7 +61,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.width}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="height"
@@ -70,7 +70,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.height}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -81,7 +81,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.groupColor}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-3 gap-4">
@@ -93,7 +93,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
               onChange={onChange}
               placeholder="http://image.com"
               value={value.src}
-              required={true}
+              required={false}
             />
           </div>
           <InputComponentDefault
@@ -103,7 +103,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder=""
             value={value.imageEditingController}
-            required={true}
+            required={false}
           />
         </div>
       </div>
@@ -132,7 +132,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.top}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="right"
@@ -141,7 +141,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.right}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="bottom"
@@ -150,7 +150,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.bottom}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="left"
@@ -159,7 +159,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.left}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -170,7 +170,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.width}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="height"
@@ -179,7 +179,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.height}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -190,7 +190,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.groupColor}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -201,7 +201,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.border}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-3 gap-4">
@@ -213,7 +213,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
               onChange={onChange}
               placeholder="http://image.com"
               value={value.src}
-              required={true}
+              required={false}
             />
           </div>
           <InputComponentDefault
@@ -223,7 +223,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder=""
             value={value.imageEditingController}
-            required={true}
+            required={false}
           />
         </div>
       </div>
@@ -252,7 +252,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.top}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="right"
@@ -261,7 +261,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.right}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="bottom"
@@ -270,7 +270,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.bottom}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="left"
@@ -279,7 +279,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.left}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -290,7 +290,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.width}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="height"
@@ -299,7 +299,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.height}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -310,7 +310,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.groupColor}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -321,7 +321,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.border}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="rounded"
@@ -330,7 +330,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.rounded}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-3 gap-4">
@@ -342,7 +342,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
               onChange={onChange}
               placeholder="http://image.com"
               value={value.src}
-              required={true}
+              required={false}
             />
           </div>
           <InputComponentDefault
@@ -352,7 +352,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder=""
             value={value.imageEditingController}
-            required={true}
+            required={false}
           />
         </div>
       </div>
@@ -381,7 +381,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.top}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="right"
@@ -390,7 +390,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.right}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="bottom"
@@ -399,7 +399,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.bottom}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="left"
@@ -408,7 +408,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.left}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -419,7 +419,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.width}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="height"
@@ -428,7 +428,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.height}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -439,7 +439,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.groupColor}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -450,7 +450,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.border}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-3 gap-4">
@@ -462,7 +462,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
               onChange={onChange}
               placeholder="http://image.com"
               value={value.src}
-              required={true}
+              required={false}
             />
           </div>
           <InputComponentDefault
@@ -472,7 +472,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder=""
             value={value.imageEditingController}
-            required={true}
+            required={false}
           />
         </div>
       </div>

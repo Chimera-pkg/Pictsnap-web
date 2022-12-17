@@ -28,22 +28,23 @@ import {
 import { FrameInput } from "src/ui/templates/FrameInput";
 import { TypeTemplates } from "src/shared/TypeTemplates";
 import { PosterTemplate } from "src/shared/TestTemplate";
+import { ConfigServices } from "src/services/ConfigServices";
 
 export function CreateTemplatePage() {
   const navigate = useNavigate();
 
   const { loading, setLoading } = useContext(LoadingContext);
 
-  const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[0]);
+  const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[2]);
   // const [components, setComponents] = useState([]);
   const [components, setComponents] = useState(PosterTemplate);
   const [tempSelectComp, setTempSelectComp] = useState(itemComponents[0]);
 
   const [colors, setColors] = useState([
-    "0F172A",
-    "0F172A",
-    "0F172A",
-    "0F172A",
+    "FB8500",
+    "FB8500",
+    "FFFFFF",
+    "FFFFFF",
   ]);
 
   const [modalInformationLittle, setModalInformationLittle] = useState({
@@ -55,7 +56,7 @@ export function CreateTemplatePage() {
     event.preventDefault();
     setLoading(true);
 
-    const data = [
+    const content_json = [
       ...components,
       {
         id: "colors_comp",
@@ -63,7 +64,22 @@ export function CreateTemplatePage() {
       },
     ];
 
-    // console.log(data);
+    const data = {
+      name: typeTemplate.name + "5",
+      content_json: JSON.stringify(content_json),
+    };
+
+    // const data = {
+    //   name: typeTemplate.name + "5",
+    //   content_json: content_json,
+    // };
+
+    console.log(data);
+
+    const configServices = new ConfigServices();
+
+    const res = await configServices.add(data);
+    console.log(res);
 
     setLoading(false);
 

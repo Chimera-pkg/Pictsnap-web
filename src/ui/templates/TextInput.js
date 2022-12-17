@@ -23,7 +23,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.top}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="right"
@@ -32,7 +32,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.right}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="bottom"
@@ -41,7 +41,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.bottom}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="left"
@@ -50,7 +50,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.left}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -61,7 +61,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.width}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="height"
@@ -70,7 +70,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.height}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -81,7 +81,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.groupColor}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -92,7 +92,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.fontSize}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="textAlign"
@@ -101,7 +101,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder=""
             value={value.textAlign}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="fontWeight"
@@ -110,7 +110,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder=""
             value={value.fontWeight}
-            required={true}
+            required={false}
           />
           <InputComponentDefault
             id="fontFamily"
@@ -119,7 +119,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder=""
             value={value.fontFamily}
-            required={true}
+            required={false}
           />
         </div>
         <div className="grid grid-cols-3 gap-4">
@@ -131,7 +131,7 @@ export function TextInput({ value, onChange, deleteItem }) {
               onChange={onChange}
               placeholder=""
               value={value.text}
-              required={true}
+              required={false}
             />
           </div>
           <InputComponentDefault
@@ -141,7 +141,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder=""
             value={value.textController}
-            required={true}
+            required={false}
           />
         </div>
       </div>
