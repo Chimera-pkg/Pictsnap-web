@@ -1,5 +1,5 @@
 import SVG from "react-inlinesvg";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { RatioTemplateContext } from "src/context/RatioTemplateContext";
 
 export function FrameTemp({ item, colors }) {
@@ -11,13 +11,13 @@ export function FrameTemp({ item, colors }) {
         item.top * ratioTemplate
       }px] right-[${item.right * ratioTemplate}px] bottom-[${
         item.bottom * ratioTemplate
-      }px] w-[${item.width * ratioTemplate}px] h-[${
-        item.height * ratioTemplate
-      }px] scale-[${ratioTemplate * 100}%] translate-y-[${
-        (100 - ratioTemplate * 100) / 2
-      }%] -translate-x-[${(100 - ratioTemplate * 100) / 2}%]`}
+      }px] `}
     >
-      <SVG src={item.svg} />
+      <SVG
+        src={item.svg}
+        width={item.width * ratioTemplate}
+        height={item.height * ratioTemplate}
+      />
     </div>
   );
 }

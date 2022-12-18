@@ -5,6 +5,7 @@ import { SidebarContext } from "src/context/SidebarContext";
 import AdminLayout from "src/layouts/AdminLayout";
 import { CreateTemplatePage } from "./CreateTemplatePage";
 import { HomePage } from "./HomePage";
+import TemplatePage from "./TemplatePage";
 
 export default function AdminRouterPage() {
   const { sidebar, setSidebar } = useContext(SidebarContext);
@@ -16,7 +17,9 @@ export default function AdminRouterPage() {
           <Routes>
             <Route path="/" element={<HomePage />} />
           </Routes>
-
+          <Routes>
+            <Route path="/template" element={<TemplatePage />} />
+          </Routes>
           <Routes>
             <Route
               path="/buat-template"

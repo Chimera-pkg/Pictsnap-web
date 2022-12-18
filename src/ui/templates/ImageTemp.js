@@ -46,7 +46,7 @@ export function ImageSquareTemp({ item, colors }) {
       <img
         src={item.src == "" ? example : item.src}
         alt="image"
-        className="h-full w-auto m-auto"
+        className="h-full w-full m-auto"
       />
     </div>
   );
@@ -72,7 +72,7 @@ export function ImageSquareRoundedTemp({ item, colors }) {
       <img
         src={item.src == "" ? example : item.src}
         alt="image"
-        className="h-full w-auto m-auto"
+        className="h-full w-full m-auto"
       />
     </div>
   );
@@ -98,7 +98,7 @@ export function ImageCircleTemp({ item, colors }) {
       <img
         src={item.src == "" ? example : item.src}
         alt="image"
-        className="h-full w-auto m-auto"
+        className="h-full w-full m-auto"
       />
     </div>
   );

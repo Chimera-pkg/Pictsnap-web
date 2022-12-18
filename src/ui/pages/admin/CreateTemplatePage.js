@@ -65,28 +65,20 @@ export function CreateTemplatePage() {
     ];
 
     const data = {
-      name: typeTemplate.name + "5",
+      name: typeTemplate.name + Date.getTime(),
       content_json: JSON.stringify(content_json),
     };
-
-    // const data = {
-    //   name: typeTemplate.name + "5",
-    //   content_json: content_json,
-    // };
-
-    console.log(data);
 
     const configServices = new ConfigServices();
 
     const res = await configServices.add(data);
-    console.log(res);
 
     setLoading(false);
 
-    // setModalInformationLittle({
-    //   status: true,
-    //   description: `Template berhasil dibuat`,
-    // });
+    setModalInformationLittle({
+      status: true,
+      description: `Template berhasil dibuat`,
+    });
   }
 
   const handleCloseModal = () => {
@@ -95,7 +87,7 @@ export function CreateTemplatePage() {
       title: "",
       description: "",
     });
-    navigate("/");
+    navigate("/template");
   };
 
   const handleRemoveItem = (idx) => {

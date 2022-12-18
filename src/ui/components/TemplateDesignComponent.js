@@ -20,7 +20,7 @@ export function TemplateDesign({ type, components, colors }) {
     <div
       className={`overflow-hidden w-[${type.logicWidth * ratioTemplate}px] h-[${
         type.logicHeight * ratioTemplate
-      }px] duration-500 shadow-xl mx-auto relative`}
+      }px] duration-500 shadow-xl mx-auto relative bg-white`}
     >
       <SwicthCase components={components} colors={colors} />
     </div>
