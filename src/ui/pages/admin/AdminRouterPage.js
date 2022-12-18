@@ -6,6 +6,7 @@ import AdminLayout from "src/layouts/AdminLayout";
 import { CreateTemplatePage } from "./CreateTemplatePage";
 import { HomePage } from "./HomePage";
 import TemplatePage from "./TemplatePage";
+import { UpdateTemplatePage } from "./UpdateTemplatePage";
 
 export default function AdminRouterPage() {
   const { sidebar, setSidebar } = useContext(SidebarContext);
@@ -19,6 +20,9 @@ export default function AdminRouterPage() {
           </Routes>
           <Routes>
             <Route path="/template" element={<TemplatePage />} />
+          </Routes>
+          <Routes>
+            <Route path="/template/:name" element={<UpdateTemplatePage />} />
           </Routes>
           <Routes>
             <Route

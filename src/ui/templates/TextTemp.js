@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { RatioTemplateContext } from "src/context/RatioTemplateContext";
 
 export function TextTemp({ item, colors }) {
-  console.log(colors);
   const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
   return (
     <div

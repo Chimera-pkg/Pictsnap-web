@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ConfigServices } from "src/services/ConfigServices";
 import { TypeTemplates } from "src/shared/TypeTemplates";
 import { SelectComponentDefault } from "src/ui/components/SelectComponent";
@@ -7,6 +8,7 @@ import { TemplateDesign } from "src/ui/components/TemplateDesignComponent";
 export default function TemplatePage() {
   const configServices = new ConfigServices();
   const [configs, setConfigs] = useState([]);
+  const [resConfigs, setResConfigs] = useState([]);
   const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[0]);
 
   useEffect(() => {
@@ -22,6 +24,7 @@ export default function TemplatePage() {
     });
 
     setConfigs(data);
+    setResConfigs(res);
   }
 
   return (
@@ -44,13 +47,14 @@ export default function TemplatePage() {
 
       <div className="flex flex-wrap gap-4 mt-8">
         {configs.map((config, idx) => {
-          console.log(config[config.length - 1]);
           return (
-            <TemplateDesign
-              type={typeTemplate}
-              components={config}
-              colors={config[config.length - 1].colors}
-            />
+            <Link to={`/template/${resConfigs[idx].name}`}>
+              <TemplateDesign
+                type={typeTemplate}
+                components={config}
+                colors={config[config.length - 1].colors}
+              />
+            </Link>
           );
         })}
       </div>

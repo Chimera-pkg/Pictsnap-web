@@ -6,7 +6,7 @@ import {
   InputComponentTextarea,
 } from "src/ui/components/InputComponent";
 import { ModalInformationLittle } from "src/ui/components/ModalInformationComponent";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Loading } from "src/ui/components/Loader";
 import { LoadingContext } from "src/context/LoadingContext";
 import { TemplateDesign } from "src/ui/components/TemplateDesignComponent";
@@ -30,14 +30,15 @@ import { TypeTemplates } from "src/shared/TypeTemplates";
 import { PosterTemplate } from "src/shared/TestTemplate";
 import { ConfigServices } from "src/services/ConfigServices";
 
-export function CreateTemplatePage() {
+export function UpdateTemplatePage() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const { loading, setLoading } = useContext(LoadingContext);
+  const configServices = new ConfigServices();
 
   const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[0]);
   const [components, setComponents] = useState([]);
-  // const [components, setComponents] = useState(PosterTemplate);
   const [tempSelectComp, setTempSelectComp] = useState(itemComponents[0]);
 
   const [colors, setColors] = useState([
@@ -52,12 +53,32 @@ export function CreateTemplatePage() {
     description: "",
   });
 
+  const [configs, setConfigs] = useState([]);
+  const [resConfigs, setResConfigs] = useState([]);
+
+  const name = location.pathname.split("/")[2];
+
+  useEffect(() => {
+    fetch(name);
+  }, []);
+
+  async function fetch(type) {
+    const res = await configServices.getAllByName(type);
+
+    setComponents(JSON.parse(res[0].content_json));
+    setColors(JSON.parse(res[0].content_json).slice(-1)[0].colors);
+    setResConfigs(res[0]);
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
     setLoading(true);
 
+    let temp = [...components];
+    temp.pop();
+
     const content_json = [
-      ...components,
+      ...temp,
       {
         id: "colors_comp",
         colors: colors,
@@ -65,11 +86,9 @@ export function CreateTemplatePage() {
     ];
 
     const data = {
-      name: typeTemplate.name + Date.getTime(),
+      name: name,
       content_json: JSON.stringify(content_json),
     };
-
-    const configServices = new ConfigServices();
 
     const res = await configServices.add(data);
 
@@ -77,7 +96,7 @@ export function CreateTemplatePage() {
 
     setModalInformationLittle({
       status: true,
-      description: `Template berhasil dibuat`,
+      description: `Template berhasil diupdate`,
     });
   }
 
@@ -354,7 +373,7 @@ export function CreateTemplatePage() {
             type="submit"
             className="py-3 pl-5 pr-5 mr-2 mt-5 transition-colors duration-700 transform bg-indigo-500 hover:bg-blue-400 text-gray-100 text-md border-indigo-300"
           >
-            Buat Template
+            Update Template
           </button>
         </form>
       </div>
