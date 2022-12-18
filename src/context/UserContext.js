@@ -4,8 +4,8 @@ export const UserContext = createContext();
 
 export const UserProvider = (props) => {
   const [user, setUser] = useState({
-    name: "Alfian Prisma Yopiangga",
-    email: "yopiangga@gmail.com",
+    name: "Admin PictSnap",
+    email: "admin@pictsnap.com",
     role: 1,
   });
 

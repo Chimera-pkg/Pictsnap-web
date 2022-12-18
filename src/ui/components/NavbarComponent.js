@@ -38,7 +38,7 @@ export function NavbarAdminComponent() {
           <a className="flex items-center text-2xl font-semibold text-gray-900">
             <img className="w-6 h-6 mr-2" src={Logo} alt="logo" />
             <h2 className="text-sm">
-              Nares <span className="text-indigo-600">Certificate</span>
+              PictSnap <span className="text-indigo-600">Builder</span>
             </h2>
           </a>
         </Link>

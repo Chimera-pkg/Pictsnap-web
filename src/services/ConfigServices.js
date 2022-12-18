@@ -31,10 +31,10 @@ export class ConfigServices {
   //     return res.data;
   //   }
 
-  //   async delete(id) {
-  //     const res = await axios.post(`${baseUrl}/certificate/delete`, { _id: id });
-  //     return res.data;
-  //   }
+  async delete(name) {
+    const res = await axios.delete(`${baseUrl}/config/${name}`);
+    return res.data;
+  }
 
   //   async update(id, data) {
   //     const res = await axios.put(`${baseUrl}/certificate/update`, {
