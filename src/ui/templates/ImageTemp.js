@@ -13,8 +13,7 @@ export function ImageLogoTemp({ item, colors }) {
         item.right * ratioTemplate
       }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
         item.width * ratioTemplate
-      }px] h-[${item.height * ratioTemplate}px] bg-[#${
-        colors[item.groupColor]
+      }px] h-[${item.height * ratioTemplate}px] bg-opacity-0
       }] `}
     >
       <img
@@ -46,7 +45,7 @@ export function ImageSquareTemp({ item, colors }) {
       <img
         src={item.src == "" ? example : item.src}
         alt="image"
-        className="h-full w-full m-auto"
+        className="h-full w-full m-auto object-cover"
       />
     </div>
   );
@@ -72,7 +71,7 @@ export function ImageSquareRoundedTemp({ item, colors }) {
       <img
         src={item.src == "" ? example : item.src}
         alt="image"
-        className="h-full w-full m-auto"
+        className="h-full w-full m-auto object-cover"
       />
     </div>
   );
@@ -80,14 +79,16 @@ export function ImageSquareRoundedTemp({ item, colors }) {
 
 export function ImageCircleTemp({ item, colors }) {
   const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
+  let horizontal;
+  if (item.left == null) {
+    horizontal = `right-[${item.right * ratioTemplate}px]`;
+  } else {
+    horizontal = `left-[${item.left * ratioTemplate}px]`;
+  }
 
   return (
     <div
-      className={`absolute overflow-hidden left-[${
-        item.left * ratioTemplate
-      }px] top-[${item.top * ratioTemplate}px] right-[${
-        item.right * ratioTemplate
-      }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
+      className={`absolute overflow-hidden ${horizontal} top-[${item.top * ratioTemplate}px] bottom-[${item.bottom * ratioTemplate}px] w-[${
         item.width * ratioTemplate
       }px] h-[${item.height * ratioTemplate}px] bg-[#${
         colors[item.groupColor]
@@ -98,7 +99,7 @@ export function ImageCircleTemp({ item, colors }) {
       <img
         src={item.src == "" ? example : item.src}
         alt="image"
-        className="h-full w-full m-auto"
+        className="h-full w-full m-auto object-cover"
       />
     </div>
   );
