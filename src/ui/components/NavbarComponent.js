@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { FiBell } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { UserContext } from "src/context/UserContext";
-import Logo from "src/logo.svg";
+import Logo from "src/assets/images/pictsnap.png";
 import { SidebarContext } from "src/context/SidebarContext";
 
 export function NavbarAdminComponent() {
@@ -38,7 +38,7 @@ export function NavbarAdminComponent() {
           <a className="flex items-center text-2xl font-semibold text-gray-900">
             <img className="w-6 h-6 mr-2" src={Logo} alt="logo" />
             <h2 className="text-sm">
-              PictSnap <span className="text-indigo-600">Builder</span>
+              PictSnap <span className="text-[#FB8500]">Builder</span>
             </h2>
           </a>
         </Link>
@@ -59,7 +59,7 @@ export function NavbarAdminComponent() {
       </button>
 
       <div className="hidden xl:flex space-x-5 items-center ml-auto text-dark">
-        <Link to={"/profile"}>
+        <Link to={"/"}>
           <div className="flex items-center hover:text-gray-600">
             <span className="mr-2">{user.name}</span>
             <svg

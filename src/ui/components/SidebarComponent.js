@@ -96,8 +96,8 @@ export function SidebarAdminComponent() {
                 to={el.link}
                 className={
                   el.link == page
-                    ? "mb-3 flex items-center capitalize font-medium text-sm text-indigo-600 transition ease-in-out duration-500"
-                    : "mb-3 flex items-center capitalize font-medium text-sm hover:text-indigo-600 transition ease-in-out duration-500"
+                    ? "mb-3 flex items-center capitalize font-medium text-sm text-[#FB8500] transition ease-in-out duration-500"
+                    : "mb-3 flex items-center capitalize font-medium text-sm hover:text-[#FB8500] transition ease-in-out duration-500"
                 }
               >
                 <el.icon className="mr-3" />
