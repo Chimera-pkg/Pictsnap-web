@@ -56,29 +56,33 @@ export function CreateTemplatePage() {
     event.preventDefault();
     setLoading(true);
 
-    const content_json = [
-      ...components,
-      {
-        id: "colors_comp",
-        colors: colors,
-      },
-    ];
+    if (components.length > 0) {
+      const content_json = [
+        ...components,
+        {
+          id: "colors_comp",
+          colors: colors,
+        },
+      ];
 
-    const data = {
-      name: typeTemplate.name + Date.getTime(),
-      content_json: JSON.stringify(content_json),
-    };
+      const data = {
+        name: typeTemplate.name + Date.getTime(),
+        content_json: JSON.stringify(content_json),
+      };
 
-    const configServices = new ConfigServices();
+      const configServices = new ConfigServices();
 
-    const res = await configServices.add(data);
+      const res = await configServices.add(data);
+    }
 
     setLoading(false);
 
-    setModalInformationLittle({
-      status: true,
-      description: `Template berhasil dibuat`,
-    });
+    if (components.length > 0) {
+      setModalInformationLittle({
+        status: true,
+        description: `Template berhasil dibuat`,
+      });
+    }
   }
 
   const handleCloseModal = () => {
