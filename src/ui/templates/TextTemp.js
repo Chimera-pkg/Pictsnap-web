@@ -10,8 +10,6 @@ export function TextTemp({ item, colors }) {
     vertical = `top-[${item.top * ratioTemplate}px]`;
   }
 
-  console.log(item.width)
-
   return (
     <div
       className={`absolute left-[${item.left * ratioTemplate}px] right-[${item.right * ratioTemplate}px] ${vertical} w-[${item.width * ratioTemplate}px] h-[${
