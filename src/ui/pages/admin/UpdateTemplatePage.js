@@ -131,251 +131,257 @@ export function UpdateTemplatePage() {
         description={modalInformationLittle.description}
         handleClose={handleCloseModal}
       />
-      <div className="lg:w-11/12 w-full lg:p-12 md:p-8 p-6 bg-white mt-5 rounded-lg shadow-lg">
-        <h1 className="text-xl font-semibold">
-          Hallo Admin👋<span className="font-normal"></span>
-        </h1>
-
-        <div className="mx-auto">
-          <TemplateDesign
-            type={TypeTemplates[typeTemplate.id]}
-            components={components}
-            colors={colors}
-          />
-        </div>
-
-        <form className="mt-6" onSubmit={handleSubmit}>
-          <div className="form grid grid-cols-1 gap-4">
-            <div className="grid grid-cols-1">
+      <div className="w-full lg:p-8 md:p-8 p-6 mt-5 rounded-lg shadow-lg lg:flex lg:gap-6 relative">
+        <div className="bg-white p-12 w-auto">
+          <form className="mt-6" onSubmit={handleSubmit}>
+            <div className="form grid grid-cols-1 gap-4">
+              <div className="grid grid-cols-1">
+                <SelectComponentDefault
+                  title="Tipe Template"
+                  id="typeTemplates"
+                  onChange={(item) => {
+                    setTypeTemplate(TypeTemplates[item.target.value]);
+                  }}
+                  placeholder="Pilih Template"
+                  value={typeTemplate}
+                  items={TypeTemplates}
+                  required={true}
+                />
+              </div>
+              <div className="grid grid-cols-4 gap-4">
+                <div className="flex items-end">
+                  <InputComponentDefault
+                    id="color0"
+                    title="Warna 0"
+                    type="text"
+                    onChange={(event) => {
+                      let temp = [...colors];
+                      temp[0] = event.target.value;
+                      setColors(temp);
+                    }}
+                    placeholder="FFFFFF"
+                    value={colors[0]}
+                    required={true}
+                  />
+                  <div className={`bg-[#${colors[0]}] w-3 h-12`}></div>
+                </div>
+                <div className="flex items-end">
+                  <InputComponentDefault
+                    id="color1"
+                    title="Warna 1"
+                    type="text"
+                    onChange={(event) => {
+                      let temp = [...colors];
+                      temp[1] = event.target.value;
+                      setColors(temp);
+                    }}
+                    placeholder="FFFFFF"
+                    value={colors[1]}
+                    required={true}
+                  />
+                  <div className={`bg-[#${colors[1]}] w-3 h-12`}></div>
+                </div>
+                <div className="flex items-end">
+                  <InputComponentDefault
+                    id="color2"
+                    title="Warna 2"
+                    type="text"
+                    onChange={(event) => {
+                      let temp = [...colors];
+                      temp[2] = event.target.value;
+                      setColors(temp);
+                    }}
+                    placeholder="FFFFFF"
+                    value={colors[2]}
+                    required={true}
+                  />
+                  <div className={`bg-[#${colors[2]}] w-3 h-12`}></div>
+                </div>
+                <div className="flex items-end">
+                  <InputComponentDefault
+                    id="color3"
+                    title="Warna 3"
+                    type="text"
+                    onChange={(event) => {
+                      let temp = [...colors];
+                      temp[3] = event.target.value;
+                      setColors(temp);
+                    }}
+                    placeholder="FFFFFF"
+                    value={colors[3]}
+                    required={true}
+                  />
+                  <div className={`bg-[#${colors[3]}] w-3 h-12`}></div>
+                </div>
+              </div>
+              {components.map((item, index) => {
+                switch (item.id) {
+                  case "frame_comp":
+                    return (
+                      <FrameInput
+                        value={item}
+                        onChange={(event) => {
+                          handleChangeProperty(index, event);
+                        }}
+                        deleteItem={() => {
+                          handleRemoveItem(index);
+                        }}
+                      />
+                    );
+                    break;
+                  case "image_logo_comp":
+                    return (
+                      <ImageLogoInput
+                        value={item}
+                        onChange={(event) => {
+                          handleChangeProperty(index, event);
+                        }}
+                        deleteItem={() => {
+                          handleRemoveItem(index);
+                        }}
+                      />
+                    );
+                    break;
+                  case "image_square_comp":
+                    return (
+                      <ImageSquareInput
+                        value={item}
+                        onChange={(event) => {
+                          handleChangeProperty(index, event);
+                        }}
+                        deleteItem={() => {
+                          handleRemoveItem(index);
+                        }}
+                      />
+                    );
+                    break;
+                  case "image_square_rounded_comp":
+                    return (
+                      <ImageSquareRoundedInput
+                        value={item}
+                        onChange={(event) => {
+                          handleChangeProperty(index, event);
+                        }}
+                        deleteItem={() => {
+                          handleRemoveItem(index);
+                        }}
+                      />
+                    );
+                    break;
+                  case "image_circle_comp":
+                    return (
+                      <ImageCircleInput
+                        value={item}
+                        onChange={(event) => {
+                          handleChangeProperty(index, event);
+                        }}
+                        deleteItem={() => {
+                          handleRemoveItem(index);
+                        }}
+                      />
+                    );
+                    break;
+                  case "container_square_comp":
+                    return (
+                      <ContainerSquareInput
+                        value={item}
+                        onChange={(event) => {
+                          handleChangeProperty(index, event);
+                        }}
+                        deleteItem={() => {
+                          handleRemoveItem(index);
+                        }}
+                      />
+                    );
+                    break;
+                  case "container_square_rounded_comp":
+                    return (
+                      <ContainerSquareRoundedInput
+                        value={item}
+                        onChange={(event) => {
+                          handleChangeProperty(index, event);
+                        }}
+                        deleteItem={() => {
+                          handleRemoveItem(index);
+                        }}
+                      />
+                    );
+                    break;
+                  case "container_circle_comp":
+                    return (
+                      <ContainerCircleInput
+                        value={item}
+                        onChange={(event) => {
+                          handleChangeProperty(index, event);
+                        }}
+                        deleteItem={() => {
+                          handleRemoveItem(index);
+                        }}
+                      />
+                    );
+                    break;
+                  case "text_comp":
+                    return (
+                      <TextInput
+                        value={item}
+                        onChange={(event) => {
+                          handleChangeProperty(index, event);
+                        }}
+                        deleteItem={() => {
+                          handleRemoveItem(index);
+                        }}
+                      />
+                    );
+                    break;
+                }
+              })}
+            </div>
+            <div className="flex gap-4 mt-5">
               <SelectComponentDefault
-                title="Tipe Template"
-                id="typeTemplates"
-                onChange={(item) => {
-                  setTypeTemplate(TypeTemplates[item.target.value]);
+                title="Tambah Komponen"
+                id="addItem"
+                onChange={(index) => {
+                  setTempSelectComp(itemComponents[index.target.value]);
                 }}
-                placeholder="Pilih Template"
-                value={typeTemplate}
-                items={TypeTemplates}
+                placeholder="Pilih Komponen"
+                value={tempSelectComp}
+                items={itemComponents}
                 required={true}
               />
-            </div>
-            <div className="grid grid-cols-4 gap-4">
-              <div className="flex items-end">
-                <InputComponentDefault
-                  id="color0"
-                  title="Warna 0"
-                  type="text"
-                  onChange={(event) => {
-                    let temp = [...colors];
-                    temp[0] = event.target.value;
-                    setColors(temp);
+              <div className="pt-8">
+                <ButtonComponentDefault
+                  title="+"
+                  onTap={() => {
+                    setComponents([...components, tempSelectComp]);
                   }}
-                  placeholder="FFFFFF"
-                  value={colors[0]}
-                  required={true}
                 />
-                <div className={`bg-[#${colors[0]}] w-3 h-12`}></div>
-              </div>
-              <div className="flex items-end">
-                <InputComponentDefault
-                  id="color1"
-                  title="Warna 1"
-                  type="text"
-                  onChange={(event) => {
-                    let temp = [...colors];
-                    temp[1] = event.target.value;
-                    setColors(temp);
-                  }}
-                  placeholder="FFFFFF"
-                  value={colors[1]}
-                  required={true}
-                />
-                <div className={`bg-[#${colors[1]}] w-3 h-12`}></div>
-              </div>
-              <div className="flex items-end">
-                <InputComponentDefault
-                  id="color2"
-                  title="Warna 2"
-                  type="text"
-                  onChange={(event) => {
-                    let temp = [...colors];
-                    temp[2] = event.target.value;
-                    setColors(temp);
-                  }}
-                  placeholder="FFFFFF"
-                  value={colors[2]}
-                  required={true}
-                />
-                <div className={`bg-[#${colors[2]}] w-3 h-12`}></div>
-              </div>
-              <div className="flex items-end">
-                <InputComponentDefault
-                  id="color3"
-                  title="Warna 3"
-                  type="text"
-                  onChange={(event) => {
-                    let temp = [...colors];
-                    temp[3] = event.target.value;
-                    setColors(temp);
-                  }}
-                  placeholder="FFFFFF"
-                  value={colors[3]}
-                  required={true}
-                />
-                <div className={`bg-[#${colors[3]}] w-3 h-12`}></div>
               </div>
             </div>
-            {components.map((item, index) => {
-              switch (item.id) {
-                case "frame_comp":
-                  return (
-                    <FrameInput
-                      value={item}
-                      onChange={(event) => {
-                        handleChangeProperty(index, event);
-                      }}
-                      deleteItem={() => {
-                        handleRemoveItem(index);
-                      }}
-                    />
-                  );
-                  break;
-                case "image_logo_comp":
-                  return (
-                    <ImageLogoInput
-                      value={item}
-                      onChange={(event) => {
-                        handleChangeProperty(index, event);
-                      }}
-                      deleteItem={() => {
-                        handleRemoveItem(index);
-                      }}
-                    />
-                  );
-                  break;
-                case "image_square_comp":
-                  return (
-                    <ImageSquareInput
-                      value={item}
-                      onChange={(event) => {
-                        handleChangeProperty(index, event);
-                      }}
-                      deleteItem={() => {
-                        handleRemoveItem(index);
-                      }}
-                    />
-                  );
-                  break;
-                case "image_square_rounded_comp":
-                  return (
-                    <ImageSquareRoundedInput
-                      value={item}
-                      onChange={(event) => {
-                        handleChangeProperty(index, event);
-                      }}
-                      deleteItem={() => {
-                        handleRemoveItem(index);
-                      }}
-                    />
-                  );
-                  break;
-                case "image_circle_comp":
-                  return (
-                    <ImageCircleInput
-                      value={item}
-                      onChange={(event) => {
-                        handleChangeProperty(index, event);
-                      }}
-                      deleteItem={() => {
-                        handleRemoveItem(index);
-                      }}
-                    />
-                  );
-                  break;
-                case "container_square_comp":
-                  return (
-                    <ContainerSquareInput
-                      value={item}
-                      onChange={(event) => {
-                        handleChangeProperty(index, event);
-                      }}
-                      deleteItem={() => {
-                        handleRemoveItem(index);
-                      }}
-                    />
-                  );
-                  break;
-                case "container_square_rounded_comp":
-                  return (
-                    <ContainerSquareRoundedInput
-                      value={item}
-                      onChange={(event) => {
-                        handleChangeProperty(index, event);
-                      }}
-                      deleteItem={() => {
-                        handleRemoveItem(index);
-                      }}
-                    />
-                  );
-                  break;
-                case "container_circle_comp":
-                  return (
-                    <ContainerCircleInput
-                      value={item}
-                      onChange={(event) => {
-                        handleChangeProperty(index, event);
-                      }}
-                      deleteItem={() => {
-                        handleRemoveItem(index);
-                      }}
-                    />
-                  );
-                  break;
-                case "text_comp":
-                  return (
-                    <TextInput
-                      value={item}
-                      onChange={(event) => {
-                        handleChangeProperty(index, event);
-                      }}
-                      deleteItem={() => {
-                        handleRemoveItem(index);
-                      }}
-                    />
-                  );
-                  break;
-              }
-            })}
-          </div>
-          <div className="flex gap-4 mt-5">
-            <SelectComponentDefault
-              title="Tambah Komponen"
-              id="addItem"
-              onChange={(index) => {
-                setTempSelectComp(itemComponents[index.target.value]);
-              }}
-              placeholder="Pilih Komponen"
-              value={tempSelectComp}
-              items={itemComponents}
-              required={true}
-            />
-            <div className="pt-8">
-              <ButtonComponentDefault
-                title="+"
-                onTap={() => {
-                  setComponents([...components, tempSelectComp]);
-                }}
+
+            <button
+              type="submit"
+              className="py-3 pl-5 pr-5 mr-2 mt-5 transition-colors duration-700 transform bg-indigo-500 hover:bg-blue-400 text-gray-100 text-md border-indigo-300"
+            >
+              Update Template
+            </button>
+          </form>
+        </div>
+
+        <div className="bg-white lg:w-2/5 lg:p-4 relative">
+          <div className="lg:sticky lg:top-20">
+            <h1 className="text-xl font-semibold">
+              Hallo Admin👋<span className="font-normal"></span>
+            </h1>
+
+            <div className="mx-auto">
+              <TemplateDesign
+                type={TypeTemplates[typeTemplate.id]}
+                components={components}
+                colors={colors}
               />
             </div>
           </div>
-
-          <button
-            type="submit"
-            className="py-3 pl-5 pr-5 mr-2 mt-5 transition-colors duration-700 transform bg-indigo-500 hover:bg-blue-400 text-gray-100 text-md border-indigo-300"
-          >
-            Update Template
-          </button>
-        </form>
+        </div>
       </div>
     </>
   );

@@ -111,7 +111,7 @@ export function TableComponentAction({
                       );
                     }
                   })}
-                  <td className="px-6 py-4">
+                  <td className="px-6 py-4 flex gap-2">
                     <button
                       onClick={() => handleEdit(value[1])}
                       className="py-1 px-5 transition-colors duration-700 transform bg-indigo-500 hover:bg-blue-400 text-gray-100 text-md border-indigo-300 rounded-md"
