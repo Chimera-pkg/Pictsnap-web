@@ -8,7 +8,7 @@ export function FrameTemp({ item, colors }) {
   let vertical = "";
   if (item.top === null || item.top === undefined) {
     vertical = `bottom-[${item.bottom * ratioTemplate}px]`;
-  } else if (item.botom === null || item.botom === undefined) {
+  } else {
     vertical = `top-[${item.top * ratioTemplate}px]`;
   }
 
