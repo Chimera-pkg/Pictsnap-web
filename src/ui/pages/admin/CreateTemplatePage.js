@@ -66,7 +66,7 @@ export function CreateTemplatePage() {
       ];
 
       const data = {
-        name: typeTemplate.name + Date.getTime(),
+        name: typeTemplate.name + (new Date).getTime(),
         content_json: JSON.stringify(content_json),
       };
 
