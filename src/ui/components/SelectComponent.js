@@ -18,12 +18,13 @@ export function SelectComponentDefault({
       <select
         onChange={onChange}
         required={required}
+        defaultValue={value.id}
         className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
       >
         <option disabled>{placeholder}</option>
         {items?.map((item, index) => {
           return (
-            <option key={index} value={index} selected={value.id == index ? true : false}>
+            <option key={index} value={index}>
               {item.title}
             </option>
           );
