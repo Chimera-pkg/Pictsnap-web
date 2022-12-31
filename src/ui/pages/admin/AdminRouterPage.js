@@ -22,7 +22,7 @@ export default function AdminRouterPage() {
             <Route path="/template" element={<TemplatePage />} />
           </Routes>
           <Routes>
-            <Route path="/template/:name" element={<UpdateTemplatePage />} />
+            <Route path="/template/:name/:id" element={<UpdateTemplatePage />} />
           </Routes>
           <Routes>
             <Route

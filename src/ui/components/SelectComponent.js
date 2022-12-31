@@ -23,7 +23,7 @@ export function SelectComponentDefault({
         <option disabled>{placeholder}</option>
         {items?.map((item, index) => {
           return (
-            <option key={index} value={index}>
+            <option key={index} value={index} selected={value.id == index ? true : false}>
               {item.title}
             </option>
           );
