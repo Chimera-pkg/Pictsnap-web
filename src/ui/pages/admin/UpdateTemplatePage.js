@@ -34,10 +34,12 @@ export function UpdateTemplatePage() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const typeTemplateId = location.pathname.split("/")[3];
+
   const { loading, setLoading } = useContext(LoadingContext);
   const configServices = new ConfigServices();
 
-  const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[0]);
+  const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[typeTemplateId]);
   const [components, setComponents] = useState([]);
   const [tempSelectComp, setTempSelectComp] = useState(itemComponents[0]);
 
@@ -57,6 +59,8 @@ export function UpdateTemplatePage() {
   const [resConfigs, setResConfigs] = useState([]);
 
   const name = location.pathname.split("/")[2];
+
+  // setTypeTemplate(TypeTemplates[typeTemplateId]);
 
   useEffect(() => {
     fetch(name);

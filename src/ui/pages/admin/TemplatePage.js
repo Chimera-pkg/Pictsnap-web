@@ -48,7 +48,7 @@ export default function TemplatePage() {
       <div className="flex flex-wrap gap-4 mt-8">
         {configs.map((config, idx) => {
           return (
-            <Link to={`/template/${resConfigs[idx].name}`}>
+            <Link to={`/template/${resConfigs[idx].name}/${typeTemplate.id}`} key={idx}>
               <TemplateDesign
                 type={typeTemplate}
                 components={config}

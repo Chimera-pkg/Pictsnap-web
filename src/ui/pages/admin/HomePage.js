@@ -52,7 +52,7 @@ export function HomePage() {
         header={["id", "nama", "Di buat", "di update", "aksi"]}
         body={templates}
         handleEdit={(name) => {
-          navigate("/template/" + name);
+          navigate("/template/" + name + "/" + typeTemplate.id);
         }}
         handleDelete={(name) => {
           configServices.delete(name);

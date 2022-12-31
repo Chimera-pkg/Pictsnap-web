@@ -30,34 +30,34 @@ export function TemplateDesign({ type, components, colors }) {
 function SwicthCase({ components, colors }) {
   return (
     <>
-      {components.map((item) => {
+      {components.map((item, idx) => {
         switch (item.id) {
           case "frame_comp":
-            return <FrameTemp item={item} colors={colors} />;
+            return <FrameTemp item={item} colors={colors} key={idx} />;
             break;
           case "image_logo_comp":
-            return <ImageLogoTemp item={item} colors={colors} />;
+            return <ImageLogoTemp item={item} colors={colors} key={idx} />;
             break;
           case "image_square_comp":
-            return <ImageSquareTemp item={item} colors={colors} />;
+            return <ImageSquareTemp item={item} colors={colors} key={idx} />;
             break;
           case "image_square_rounded_comp":
-            return <ImageSquareRoundedTemp item={item} colors={colors} />;
+            return <ImageSquareRoundedTemp item={item} colors={colors} key={idx} />;
             break;
           case "image_circle_comp":
-            return <ImageCircleTemp item={item} colors={colors} />;
+            return <ImageCircleTemp item={item} colors={colors} key={idx} />;
             break;
           case "container_square_comp":
-            return <ContainerSquareTemp item={item} colors={colors} />;
+            return <ContainerSquareTemp item={item} colors={colors} key={idx} />;
             break;
           case "container_square_rounded_comp":
-            return <ContainerSquareRoundedTemp item={item} colors={colors} />;
+            return <ContainerSquareRoundedTemp item={item} colors={colors} key={idx} />;
             break;
           case "container_circle_comp":
-            return <ContainerCircleTemp item={item} colors={colors} />;
+            return <ContainerCircleTemp item={item} colors={colors} key={idx} />;
             break;
           case "text_comp":
-            return <TextTemp item={item} colors={colors} />;
+            return <TextTemp item={item} colors={colors} key={idx} />;
             break;
           default:
             return null;
