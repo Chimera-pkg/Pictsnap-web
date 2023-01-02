@@ -16,7 +16,9 @@ export function FrameTemp({ item, colors }) {
     <div
       className={`absolute left-[${item.left * ratioTemplate}px] right-[${
         item.right * ratioTemplate
-      }px] ${vertical} ${item.height}`}
+      }px] top-[${item.top * ratioTemplate}px] bottom-[${
+        item.bottom * ratioTemplate
+      }px]`}
     >
       <SVG
         src={item.svg}
