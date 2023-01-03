@@ -7,16 +7,16 @@ export function FrameTemp({ item, colors }) {
 
   return (
     <div
-      className={`absolute left-[${item.left * ratioTemplate}px] right-[${
-        item.right * ratioTemplate
-      }px] top-[${item.top * ratioTemplate}px] bottom-[${
-        item.bottom * ratioTemplate
-      }px]`}
+      className={`absolute left-[${
+        item.left ?? undefined * ratioTemplate
+      }px] right-[${item.right ?? undefined * ratioTemplate}px] top-[${
+        item.top ?? undefined * ratioTemplate
+      }px] bottom-[${item.bottom ?? undefined * ratioTemplate}px]`}
     >
       <SVG
         src={item.svg}
-        width={item.width * ratioTemplate}
-        height={item.height * ratioTemplate}
+        width={item.width ?? undefined * ratioTemplate}
+        height={item.height ?? undefined * ratioTemplate}
       />
     </div>
   );
