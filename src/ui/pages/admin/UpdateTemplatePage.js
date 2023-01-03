@@ -96,6 +96,8 @@ export function UpdateTemplatePage() {
       content_json: JSON.stringify(content_json),
     };
 
+    // console.log(content_json);
+
     const res = await configServices.add(data);
 
     setLoading(false);
@@ -134,7 +136,7 @@ export function UpdateTemplatePage() {
       event.target.name == "fontSize" ||
       event.target.name == "border" ||
       event.target.name == "rounded" ||
-      event.target.name == "color"
+      event.target.name == "groupColor"
     )
       temp[idx][event.target.name] = parseInt(event.target.value);
     else temp[idx][event.target.name] = event.target.value;
