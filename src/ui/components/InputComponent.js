@@ -117,3 +117,77 @@ export function InputComponentImage({ id, title, onChange, placeholder }) {
     </div>
   );
 }
+
+export function DropdownComponentColor({
+  id,
+  title,
+  type,
+  onChange,
+  placeholder,
+  value,
+  required,
+  items,
+}) {
+  return (
+    <div className="">
+      <label
+        htmlFor={id}
+        className="block mt-2 text-xs font-semibold text-gray-600 uppercase"
+      >
+        {title}
+      </label>
+      <select
+        name={id}
+        id={id}
+        onChange={onChange}
+        className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+        defaultValue={value}
+      >
+        {items?.map((item, index) => {
+          return (
+            <option key={index} value={index}>
+              {item}
+            </option>
+          );
+        })}
+      </select>
+    </div>
+  );
+}
+
+export function DropdownComponentDefault({
+  id,
+  title,
+  type,
+  onChange,
+  placeholder,
+  value,
+  required,
+  items,
+}) {
+  return (
+    <div className="">
+      <label
+        htmlFor={id}
+        className="block mt-2 text-xs font-semibold text-gray-600 uppercase"
+      >
+        {title}
+      </label>
+      <select
+        name={id}
+        id={id}
+        onChange={onChange}
+        className="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+        defaultValue={value}
+      >
+        {items?.map((item, index) => {
+          return (
+            <option key={index} value={item}>
+              {item}
+            </option>
+          );
+        })}
+      </select>
+    </div>
+  );
+}

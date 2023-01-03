@@ -47,6 +47,23 @@ export function CreateTemplatePage() {
     "FFFFFF",
   ]);
 
+  const align = [
+    'left',
+    'rigth',
+    'center',
+    'justify'
+  ]
+
+  const fontWeight = [
+    'normal',
+    'light',
+    'bold'
+  ]
+
+  const fontFamily = [
+    'Poppins'
+  ]
+
   const [modalInformationLittle, setModalInformationLittle] = useState({
     status: false,
     description: "",
@@ -218,6 +235,7 @@ export function CreateTemplatePage() {
                     return (
                       <ImageLogoInput
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -231,6 +249,7 @@ export function CreateTemplatePage() {
                     return (
                       <ImageSquareInput
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -244,6 +263,7 @@ export function CreateTemplatePage() {
                     return (
                       <ImageSquareRoundedInput
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -257,6 +277,7 @@ export function CreateTemplatePage() {
                     return (
                       <ImageCircleInput
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -270,6 +291,7 @@ export function CreateTemplatePage() {
                     return (
                       <ContainerSquareInput
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -283,6 +305,7 @@ export function CreateTemplatePage() {
                     return (
                       <ContainerSquareRoundedInput
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -296,6 +319,7 @@ export function CreateTemplatePage() {
                     return (
                       <ContainerCircleInput
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -309,6 +333,10 @@ export function CreateTemplatePage() {
                     return (
                       <TextInput
                         value={item}
+                        color={colors}
+                        align={align}
+                        fontWeight={fontWeight}
+                        fontFamily={fontFamily}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}

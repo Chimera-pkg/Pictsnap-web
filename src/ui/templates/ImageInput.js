@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { InputComponentDefault } from "../components/InputComponent";
+import { DropdownComponentColor, InputComponentDefault } from "../components/InputComponent";
 import { LabelInputComponent } from "../components/LabelInputComponent";
 
-export function ImageLogoInput({ value, onChange, deleteItem }) {
+export function ImageLogoInput({ value, onChange, deleteItem, color }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -74,7 +74,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <InputComponentDefault
+          <DropdownComponentColor
             id="groupColor"
             title="Color"
             type="number"
@@ -82,6 +82,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             placeholder="px"
             value={value.groupColor}
             required={false}
+            items={color}
           />
         </div>
         <div className="grid grid-cols-3 gap-4">
@@ -111,7 +112,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
   );
 }
 
-export function ImageSquareInput({ value, onChange, deleteItem }) {
+export function ImageSquareInput({ value, onChange, deleteItem, color }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -183,7 +184,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <InputComponentDefault
+          <DropdownComponentColor
             id="groupColor"
             title="Color"
             type="number"
@@ -191,6 +192,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             placeholder="px"
             value={value.groupColor}
             required={false}
+            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -231,7 +233,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
   );
 }
 
-export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
+export function ImageSquareRoundedInput({ value, onChange, deleteItem, color }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -303,7 +305,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <InputComponentDefault
+          <DropdownComponentColor
             id="groupColor"
             title="Color"
             type="number"
@@ -311,6 +313,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             placeholder="px"
             value={value.groupColor}
             required={false}
+            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -360,7 +363,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
   );
 }
 
-export function ImageCircleInput({ value, onChange, deleteItem }) {
+export function ImageCircleInput({ value, onChange, deleteItem, color }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -432,7 +435,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <InputComponentDefault
+          <DropdownComponentColor
             id="groupColor"
             title="Color"
             type="number"
@@ -440,6 +443,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             placeholder="px"
             value={value.groupColor}
             required={false}
+            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">

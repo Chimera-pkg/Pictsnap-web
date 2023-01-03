@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { InputComponentDefault } from "../components/InputComponent";
+import { DropdownComponentColor, DropdownComponentDefault, InputComponentDefault } from "../components/InputComponent";
 import { LabelInputComponent } from "../components/LabelInputComponent";
 
-export function TextInput({ value, onChange, deleteItem }) {
+export function TextInput({ value, onChange, deleteItem, color, align, fontWeight, fontFamily }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -74,7 +74,7 @@ export function TextInput({ value, onChange, deleteItem }) {
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <InputComponentDefault
+          <DropdownComponentColor
             id="groupColor"
             title="Color"
             type="number"
@@ -82,6 +82,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             placeholder="px"
             value={value.groupColor}
             required={false}
+            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -94,7 +95,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             value={value.fontSize}
             required={false}
           />
-          <InputComponentDefault
+          <DropdownComponentDefault
             id="textAlign"
             title="Text Align"
             type="text"
@@ -102,8 +103,9 @@ export function TextInput({ value, onChange, deleteItem }) {
             placeholder=""
             value={value.textAlign}
             required={false}
+            items={align}
           />
-          <InputComponentDefault
+          <DropdownComponentDefault
             id="fontWeight"
             title="Font Weight"
             type="text"
@@ -111,8 +113,9 @@ export function TextInput({ value, onChange, deleteItem }) {
             placeholder=""
             value={value.fontWeight}
             required={false}
+            items={fontWeight}
           />
-          <InputComponentDefault
+          <DropdownComponentDefault
             id="fontFamily"
             title="Font Family"
             type="text"
@@ -120,6 +123,7 @@ export function TextInput({ value, onChange, deleteItem }) {
             placeholder=""
             value={value.fontFamily}
             required={false}
+            items={fontFamily}
           />
         </div>
         <div className="grid grid-cols-3 gap-4">
