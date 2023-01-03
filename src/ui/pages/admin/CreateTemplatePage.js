@@ -29,6 +29,10 @@ import { FrameInput } from "src/ui/templates/FrameInput";
 import { TypeTemplates } from "src/shared/TypeTemplates";
 import { PosterTemplate } from "src/shared/TestTemplate";
 import { ConfigServices } from "src/services/ConfigServices";
+import {
+  handleCheckToInteger,
+  handleConvertToInteger,
+} from "src/shared/HandleInputStringToInteger";
 
 export function CreateTemplatePage() {
   const navigate = useNavigate();
@@ -73,9 +77,15 @@ export function CreateTemplatePage() {
     event.preventDefault();
     setLoading(true);
 
+    let temp = [];
+
+    components.map((item) => {
+      temp.push(handleConvertToInteger(item));
+    });
+
     if (components.length > 0) {
       const content_json = [
-        ...components,
+        ...temp,
         {
           id: "colors_comp",
           colors: colors,
@@ -83,7 +93,7 @@ export function CreateTemplatePage() {
       ];
 
       const data = {
-        name: typeTemplate.name + (new Date).getTime(),
+        name: typeTemplate.name + new Date().getTime(),
         content_json: JSON.stringify(content_json),
       };
 
@@ -120,7 +130,9 @@ export function CreateTemplatePage() {
 
   const handleChangeProperty = (idx, event) => {
     let temp = [...components];
-    temp[idx][event.target.name] = event.target.value;
+    if (handleCheckToInteger(event.target.name))
+      temp[idx][event.target.name] = parseInt(event.target.value);
+    else temp[idx][event.target.name] = event.target.value;
     setComponents(temp);
   };
 

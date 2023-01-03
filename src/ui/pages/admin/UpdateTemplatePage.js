@@ -29,6 +29,10 @@ import { FrameInput } from "src/ui/templates/FrameInput";
 import { TypeTemplates } from "src/shared/TypeTemplates";
 import { PosterTemplate } from "src/shared/TestTemplate";
 import { ConfigServices } from "src/services/ConfigServices";
+import {
+  handleCheckToInteger,
+  handleConvertToInteger,
+} from "src/shared/HandleInputStringToInteger";
 
 export function UpdateTemplatePage() {
   const navigate = useNavigate();
@@ -79,8 +83,6 @@ export function UpdateTemplatePage() {
 
   const name = location.pathname.split("/")[2];
 
-  // setTypeTemplate(TypeTemplates[typeTemplateId]);
-
   useEffect(() => {
     fetch(name);
   }, []);
@@ -93,29 +95,6 @@ export function UpdateTemplatePage() {
     setResConfigs(res[0]);
   }
 
-  function handleConvert(data) {
-    let temp = data;
-    for (var key in temp) {
-      if (temp.hasOwnProperty(key)) {
-        if (
-          key == "top" ||
-          key == "left" ||
-          key == "right" ||
-          key == "bottom" ||
-          key == "width" ||
-          key == "height" ||
-          key == "fontSize" ||
-          key == "border" ||
-          key == "rounded" ||
-          key == "groupColor"
-        )
-          temp[key] = parseInt(temp[key]);
-      }
-    }
-
-    return temp;
-  }
-
   async function handleSubmit(event) {
     event.preventDefault();
     setLoading(true);
@@ -123,7 +102,7 @@ export function UpdateTemplatePage() {
     let temp = [];
 
     components.map((item) => {
-      temp.push(handleConvert(item));
+      temp.push(handleConvertToInteger(item));
     });
 
     temp.pop();
@@ -169,18 +148,7 @@ export function UpdateTemplatePage() {
 
   const handleChangeProperty = (idx, event) => {
     let temp = [...components];
-    if (
-      event.target.name == "top" ||
-      event.target.name == "left" ||
-      event.target.name == "right" ||
-      event.target.name == "bottom" ||
-      event.target.name == "width" ||
-      event.target.name == "height" ||
-      event.target.name == "fontSize" ||
-      event.target.name == "border" ||
-      event.target.name == "rounded" ||
-      event.target.name == "groupColor"
-    )
+    if (handleCheckToInteger(event.target.name))
       temp[idx][event.target.name] = parseInt(event.target.value);
     else temp[idx][event.target.name] = event.target.value;
     setComponents(temp);
