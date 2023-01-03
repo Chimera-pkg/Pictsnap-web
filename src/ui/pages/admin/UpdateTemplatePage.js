@@ -39,7 +39,9 @@ export function UpdateTemplatePage() {
   const { loading, setLoading } = useContext(LoadingContext);
   const configServices = new ConfigServices();
 
-  const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[typeTemplateId]);
+  const [typeTemplate, setTypeTemplate] = useState(
+    TypeTemplates[typeTemplateId]
+  );
   const [components, setComponents] = useState([]);
   const [tempSelectComp, setTempSelectComp] = useState(itemComponents[0]);
 
@@ -94,7 +96,9 @@ export function UpdateTemplatePage() {
       content_json: JSON.stringify(content_json),
     };
 
-    const res = await configServices.add(data);
+    console.log(content_json);
+
+    // const res = await configServices.add(data);
 
     setLoading(false);
 
@@ -122,7 +126,20 @@ export function UpdateTemplatePage() {
 
   const handleChangeProperty = (idx, event) => {
     let temp = [...components];
-    temp[idx][event.target.name] = event.target.value;
+    if (
+      event.target.name == "top" ||
+      event.target.name == "left" ||
+      event.target.name == "right" ||
+      event.target.name == "bottom" ||
+      event.target.name == "width" ||
+      event.target.name == "height" ||
+      event.target.name == "fontSize" ||
+      event.target.name == "border" ||
+      event.target.name == "rounded" ||
+      event.target.name == "color"
+    )
+      temp[idx][event.target.name] = parseInt(event.target.value);
+    else temp[idx][event.target.name] = event.target.value;
     setComponents(temp);
   };
 
