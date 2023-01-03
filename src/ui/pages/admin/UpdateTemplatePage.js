@@ -96,9 +96,7 @@ export function UpdateTemplatePage() {
       content_json: JSON.stringify(content_json),
     };
 
-    console.log(content_json);
-
-    // const res = await configServices.add(data);
+    const res = await configServices.add(data);
 
     setLoading(false);
 
