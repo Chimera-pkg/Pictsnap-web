@@ -76,11 +76,39 @@ export function UpdateTemplatePage() {
     setResConfigs(res[0]);
   }
 
+  function handleConvert(data) {
+    let temp = data;
+    for (var key in temp) {
+      if (temp.hasOwnProperty(key)) {
+        if (
+          key == "top" ||
+          key == "left" ||
+          key == "right" ||
+          key == "bottom" ||
+          key == "width" ||
+          key == "height" ||
+          key == "fontSize" ||
+          key == "border" ||
+          key == "rounded" ||
+          key == "groupColor"
+        )
+          temp[key] = parseInt(temp[key]);
+      }
+    }
+
+    return temp;
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
     setLoading(true);
 
-    let temp = [...components];
+    let temp = [];
+
+    components.map((item) => {
+      temp.push(handleConvert(item));
+    });
+
     temp.pop();
 
     const content_json = [
@@ -95,8 +123,6 @@ export function UpdateTemplatePage() {
       name: name,
       content_json: JSON.stringify(content_json),
     };
-
-    // console.log(content_json);
 
     const res = await configServices.add(data);
 
