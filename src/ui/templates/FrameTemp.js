@@ -8,15 +8,19 @@ export function FrameTemp({ item, colors }) {
   return (
     <div
       className={`absolute left-[${
-        item.left ?? undefined * ratioTemplate
-      }px] right-[${item.right ?? undefined * ratioTemplate}px] top-[${
-        item.top ?? undefined * ratioTemplate
-      }px] bottom-[${item.bottom ?? undefined * ratioTemplate}px]`}
+        item.left == null ? undefined : item.left * ratioTemplate
+      }px] right-[${
+        item.right == null ? undefined : item.right * ratioTemplate
+      }px] top-[${
+        item.top == null ? undefined : item.top * ratioTemplate
+      }px] bottom-[${
+        item.bottom == null ? undefined : item.bottom * ratioTemplate
+      }px]`}
     >
       <SVG
         src={item.svg}
-        width={item.width ?? undefined * ratioTemplate}
-        height={item.height ?? undefined * ratioTemplate}
+        width={item.width == null ? undefined : item.width * ratioTemplate}
+        height={item.height == null ? undefined : item.height * ratioTemplate}
       />
     </div>
   );
