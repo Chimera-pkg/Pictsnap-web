@@ -91,11 +91,9 @@ export function UpdateTemplatePage() {
 
     let temp = [];
 
-    components.map((item) => {
-      temp.push(handleConvertToInteger(item));
+    components.map((item, index) => {
+      if (item.id != "colors_comp") temp.push(handleConvertToInteger(item));
     });
-
-    temp.pop();
 
     const content_json = [
       ...temp,
@@ -250,6 +248,7 @@ export function UpdateTemplatePage() {
                   case "frame_comp":
                     return (
                       <FrameInput
+                        key={index}
                         value={item}
                         color={colors}
                         onChange={(event) => {
@@ -264,6 +263,7 @@ export function UpdateTemplatePage() {
                   case "image_logo_comp":
                     return (
                       <ImageLogoInput
+                        key={index}
                         value={item}
                         color={colors}
                         onChange={(event) => {
@@ -278,6 +278,7 @@ export function UpdateTemplatePage() {
                   case "image_square_comp":
                     return (
                       <ImageSquareInput
+                        key={index}
                         value={item}
                         color={colors}
                         onChange={(event) => {
@@ -292,6 +293,7 @@ export function UpdateTemplatePage() {
                   case "image_square_rounded_comp":
                     return (
                       <ImageSquareRoundedInput
+                        key={index}
                         value={item}
                         color={colors}
                         onChange={(event) => {
@@ -306,6 +308,7 @@ export function UpdateTemplatePage() {
                   case "image_circle_comp":
                     return (
                       <ImageCircleInput
+                        key={index}
                         value={item}
                         color={colors}
                         onChange={(event) => {
@@ -334,6 +337,7 @@ export function UpdateTemplatePage() {
                   case "container_square_comp":
                     return (
                       <ContainerSquareInput
+                        key={index}
                         value={item}
                         color={colors}
                         onChange={(event) => {
@@ -348,6 +352,7 @@ export function UpdateTemplatePage() {
                   case "container_square_rounded_comp":
                     return (
                       <ContainerSquareRoundedInput
+                        key={index}
                         value={item}
                         color={colors}
                         onChange={(event) => {
@@ -362,6 +367,7 @@ export function UpdateTemplatePage() {
                   case "container_circle_comp":
                     return (
                       <ContainerCircleInput
+                        key={index}
                         value={item}
                         color={colors}
                         onChange={(event) => {
@@ -376,6 +382,7 @@ export function UpdateTemplatePage() {
                   case "text_comp":
                     return (
                       <TextInput
+                        key={index}
                         value={item}
                         color={colors}
                         align={align}
