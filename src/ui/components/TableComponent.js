@@ -119,7 +119,7 @@ export function TableComponentAction({
                       Ubah
                     </button>
                     <button
-                      onClick={() => handleDelete(value[1])}
+                      onClick={(event) => handleDelete(value[1], event)}
                       className="py-1 px-5 transition-colors duration-700 transform bg-red-500 hover:bg-red-400 text-gray-100 text-md border-red-300 rounded-md"
                     >
                       Hapus

@@ -1,8 +1,11 @@
 import { useState } from "react";
-import { InputComponentDefault } from "../components/InputComponent";
+import {
+  DropdownComponentColor,
+  InputComponentDefault,
+} from "../components/InputComponent";
 import { LabelInputComponent } from "../components/LabelInputComponent";
 
-export function ImageLogoInput({ value, onChange, deleteItem }) {
+export function ImageLogoInput({ value, onChange, deleteItem, color }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -74,7 +77,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <InputComponentDefault
+          <DropdownComponentColor
             id="groupColor"
             title="Color"
             type="number"
@@ -82,6 +85,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
             placeholder="px"
             value={value.groupColor}
             required={false}
+            items={color}
           />
         </div>
         <div className="grid grid-cols-3 gap-4">
@@ -111,7 +115,7 @@ export function ImageLogoInput({ value, onChange, deleteItem }) {
   );
 }
 
-export function ImageSquareInput({ value, onChange, deleteItem }) {
+export function ImageSquareInput({ value, onChange, deleteItem, color }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -183,7 +187,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <InputComponentDefault
+          <DropdownComponentColor
             id="groupColor"
             title="Color"
             type="number"
@@ -191,6 +195,7 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
             placeholder="px"
             value={value.groupColor}
             required={false}
+            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -231,7 +236,12 @@ export function ImageSquareInput({ value, onChange, deleteItem }) {
   );
 }
 
-export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
+export function ImageSquareRoundedInput({
+  value,
+  onChange,
+  deleteItem,
+  color,
+}) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -303,7 +313,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <InputComponentDefault
+          <DropdownComponentColor
             id="groupColor"
             title="Color"
             type="number"
@@ -311,6 +321,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
             placeholder="px"
             value={value.groupColor}
             required={false}
+            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -360,7 +371,7 @@ export function ImageSquareRoundedInput({ value, onChange, deleteItem }) {
   );
 }
 
-export function ImageCircleInput({ value, onChange, deleteItem }) {
+export function ImageCircleInput({ value, onChange, deleteItem, color }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -432,7 +443,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <InputComponentDefault
+          <DropdownComponentColor
             id="groupColor"
             title="Color"
             type="number"
@@ -440,6 +451,7 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             placeholder="px"
             value={value.groupColor}
             required={false}
+            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -472,6 +484,93 @@ export function ImageCircleInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder=""
             value={value.imageEditingController}
+            required={false}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ImageStaticInput({ value, onChange, deleteItem }) {
+  const [show, setShow] = useState(true);
+  return (
+    <div>
+      <LabelInputComponent
+        title="Image Static"
+        show={show}
+        setShow={setShow}
+        deleteItem={deleteItem}
+      />
+      <div
+        className={`overflow-hidden duration-150 ${show ? "h-full" : "h-0"}`}
+      >
+        <div className="grid grid-cols-4 gap-4">
+          <InputComponentDefault
+            id="top"
+            title="Top"
+            type="number"
+            onChange={onChange}
+            placeholder="px"
+            value={value.top}
+            required={false}
+          />
+          <InputComponentDefault
+            id="right"
+            title="Right"
+            type="number"
+            onChange={onChange}
+            placeholder="px"
+            value={value.right}
+            required={false}
+          />
+          <InputComponentDefault
+            id="bottom"
+            title="Bottom"
+            type="number"
+            onChange={onChange}
+            placeholder="px"
+            value={value.bottom}
+            required={false}
+          />
+          <InputComponentDefault
+            id="left"
+            title="Left"
+            type="number"
+            onChange={onChange}
+            placeholder="px"
+            value={value.left}
+            required={false}
+          />
+        </div>
+        <div className="grid grid-cols-4 gap-4">
+          <InputComponentDefault
+            id="width"
+            title="Width"
+            type="number"
+            onChange={onChange}
+            placeholder="px"
+            value={value.width}
+            required={false}
+          />
+          <InputComponentDefault
+            id="height"
+            title="Height"
+            type="number"
+            onChange={onChange}
+            placeholder="px"
+            value={value.height}
+            required={false}
+          />
+        </div>
+        <div className="grid grid-cols-1">
+          <InputComponentDefault
+            id="src"
+            title="link Image"
+            type="text"
+            onChange={onChange}
+            placeholder="http://image.com"
+            value={value.src}
             required={false}
           />
         </div>

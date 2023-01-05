@@ -24,11 +24,16 @@ import {
   ImageCircleInput,
   ImageSquareInput,
   ImageSquareRoundedInput,
+  ImageStaticInput,
 } from "src/ui/templates/ImageInput";
 import { FrameInput } from "src/ui/templates/FrameInput";
 import { TypeTemplates } from "src/shared/TypeTemplates";
 import { PosterTemplate } from "src/shared/TestTemplate";
 import { ConfigServices } from "src/services/ConfigServices";
+import {
+  handleCheckToInteger,
+  handleConvertToInteger,
+} from "src/shared/HandleInputStringToInteger";
 
 export function UpdateTemplatePage() {
   const navigate = useNavigate();
@@ -39,7 +44,9 @@ export function UpdateTemplatePage() {
   const { loading, setLoading } = useContext(LoadingContext);
   const configServices = new ConfigServices();
 
-  const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[typeTemplateId]);
+  const [typeTemplate, setTypeTemplate] = useState(
+    TypeTemplates[typeTemplateId]
+  );
   const [components, setComponents] = useState([]);
   const [tempSelectComp, setTempSelectComp] = useState(itemComponents[0]);
 
@@ -50,6 +57,12 @@ export function UpdateTemplatePage() {
     "FFFFFF",
   ]);
 
+  const align = ["left", "rigth", "center", "justify"];
+
+  const fontWeight = ["normal", "light", "bold"];
+
+  const fontFamily = ["Poppins"];
+
   const [modalInformationLittle, setModalInformationLittle] = useState({
     status: false,
     description: "",
@@ -59,8 +72,6 @@ export function UpdateTemplatePage() {
   const [resConfigs, setResConfigs] = useState([]);
 
   const name = location.pathname.split("/")[2];
-
-  // setTypeTemplate(TypeTemplates[typeTemplateId]);
 
   useEffect(() => {
     fetch(name);
@@ -78,8 +89,11 @@ export function UpdateTemplatePage() {
     event.preventDefault();
     setLoading(true);
 
-    let temp = [...components];
-    temp.pop();
+    let temp = [];
+
+    components.map((item, index) => {
+      if (item.id != "colors_comp") temp.push(handleConvertToInteger(item));
+    });
 
     const content_json = [
       ...temp,
@@ -120,11 +134,22 @@ export function UpdateTemplatePage() {
     setComponents(temp);
   };
 
-  const handleChangeProperty = (idx, event) => {
+  function handleChangeProperty(idx, event) {
     let temp = [...components];
-    temp[idx][event.target.name] = event.target.value;
+
+    temp = temp.map(function (item, index) {
+      return index == idx
+        ? {
+            ...item,
+            [event.target.name]: handleCheckToInteger(event.target.name)
+              ? parseInt(event.target.value)
+              : event.target.value,
+          }
+        : item;
+    });
+
     setComponents(temp);
-  };
+  }
 
   return (
     <>
@@ -223,7 +248,9 @@ export function UpdateTemplatePage() {
                   case "frame_comp":
                     return (
                       <FrameInput
+                        key={index}
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -236,7 +263,9 @@ export function UpdateTemplatePage() {
                   case "image_logo_comp":
                     return (
                       <ImageLogoInput
+                        key={index}
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -249,7 +278,9 @@ export function UpdateTemplatePage() {
                   case "image_square_comp":
                     return (
                       <ImageSquareInput
+                        key={index}
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -262,7 +293,9 @@ export function UpdateTemplatePage() {
                   case "image_square_rounded_comp":
                     return (
                       <ImageSquareRoundedInput
+                        key={index}
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -275,6 +308,22 @@ export function UpdateTemplatePage() {
                   case "image_circle_comp":
                     return (
                       <ImageCircleInput
+                        key={index}
+                        value={item}
+                        color={colors}
+                        onChange={(event) => {
+                          handleChangeProperty(index, event);
+                        }}
+                        deleteItem={() => {
+                          handleRemoveItem(index);
+                        }}
+                      />
+                    );
+                    break;
+                  case "image_static_comp":
+                    return (
+                      <ImageStaticInput
+                        key={index}
                         value={item}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
@@ -288,7 +337,9 @@ export function UpdateTemplatePage() {
                   case "container_square_comp":
                     return (
                       <ContainerSquareInput
+                        key={index}
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -301,7 +352,9 @@ export function UpdateTemplatePage() {
                   case "container_square_rounded_comp":
                     return (
                       <ContainerSquareRoundedInput
+                        key={index}
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -314,7 +367,9 @@ export function UpdateTemplatePage() {
                   case "container_circle_comp":
                     return (
                       <ContainerCircleInput
+                        key={index}
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -327,7 +382,12 @@ export function UpdateTemplatePage() {
                   case "text_comp":
                     return (
                       <TextInput
+                        key={index}
                         value={item}
+                        color={colors}
+                        align={align}
+                        fontWeight={fontWeight}
+                        fontFamily={fontFamily}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}

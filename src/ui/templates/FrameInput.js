@@ -1,8 +1,11 @@
 import { useState } from "react";
-import { InputComponentDefault } from "../components/InputComponent";
+import {
+  DropdownComponentColor,
+  InputComponentDefault,
+} from "../components/InputComponent";
 import { LabelInputComponent } from "../components/LabelInputComponent";
 
-export function FrameInput({ value, onChange, deleteItem }) {
+export function FrameInput({ value, onChange, deleteItem, color }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -74,17 +77,18 @@ export function FrameInput({ value, onChange, deleteItem }) {
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <InputComponentDefault
+          <DropdownComponentColor
             id="groupColor"
             title="Color"
             type="number"
             onChange={onChange}
+            items={color}
             placeholder="px"
             value={value.groupColor}
             required={false}
           />
         </div>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 gap-4">
           <InputComponentDefault
             id="svg"
             title="SVG"
