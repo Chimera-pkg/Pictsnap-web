@@ -58,6 +58,9 @@ export function CreateTemplatePage() {
 
   const fontFamily = ["Poppins"];
 
+  const imageEditingController = [0, 0, 0, 0, 0, 0];
+  const textEditingController = [0, 0, 0, 0, 0, 0];
+
   const [modalInformationLittle, setModalInformationLittle] = useState({
     status: false,
     description: "",
@@ -69,7 +72,23 @@ export function CreateTemplatePage() {
 
     let temp = [];
 
+    let imageController = 0;
+    let textController = 0;
+
     components.map((item) => {
+      if (
+        item.id == "image_logo_comp" ||
+        item.id == "image_square_comp" ||
+        item.id == "image_square_rounded_comp" ||
+        item.id == "image_circle_comp"
+      ) {
+        item.imageEditingController = imageController++;
+      }
+
+      if (item.id == "text_comp") {
+        item.textController = textController++;
+      }
+
       temp.push(handleConvertToInteger(item));
     });
 
@@ -113,6 +132,18 @@ export function CreateTemplatePage() {
 
   const handleRemoveItem = (idx) => {
     const temp = [...components];
+    if (
+      temp[idx].id == "image_logo_comp" ||
+      temp[idx].id == "image_square_comp" ||
+      temp[idx].id == "image_square_rounded_comp" ||
+      temp[idx].id == "image_circle_comp"
+    ) {
+      imageEditingController.push(0);
+    }
+
+    if (temp[idx].id == "text_comp") {
+      textEditingController.push(0);
+    }
     temp.splice(idx, 1);
 
     setComponents(temp);
@@ -134,6 +165,27 @@ export function CreateTemplatePage() {
 
     setComponents(temp);
   }
+
+  const handleAddComp = () => {
+    if (
+      tempSelectComp.id == "image_logo_comp" ||
+      tempSelectComp.id == "image_square_comp" ||
+      tempSelectComp.id == "image_square_rounded_comp" ||
+      tempSelectComp.id == "image_circle_comp"
+    ) {
+      if (imageEditingController.length == 1) {
+        return;
+      }
+    }
+
+    if (tempSelectComp.id == "text_comp") {
+      if (textEditingController.length == 1) {
+        return;
+      }
+    }
+
+    setComponents((prevComponents) => [...prevComponents, tempSelectComp]);
+  };
 
   return (
     <>
@@ -245,64 +297,76 @@ export function CreateTemplatePage() {
                     );
                     break;
                   case "image_logo_comp":
-                    return (
-                      <ImageLogoInput
-                        key={index}
-                        value={item}
-                        color={colors}
-                        onChange={(event) => {
-                          handleChangeProperty(index, event);
-                        }}
-                        deleteItem={() => {
-                          handleRemoveItem(index);
-                        }}
-                      />
-                    );
+                    if (imageEditingController.length > 1) {
+                      imageEditingController.shift();
+                      return (
+                        <ImageLogoInput
+                          key={index}
+                          value={item}
+                          color={colors}
+                          onChange={(event) => {
+                            handleChangeProperty(index, event);
+                          }}
+                          deleteItem={() => {
+                            handleRemoveItem(index);
+                          }}
+                        />
+                      );
+                    }
                     break;
                   case "image_square_comp":
-                    return (
-                      <ImageSquareInput
-                        key={index}
-                        value={item}
-                        color={colors}
-                        onChange={(event) => {
-                          handleChangeProperty(index, event);
-                        }}
-                        deleteItem={() => {
-                          handleRemoveItem(index);
-                        }}
-                      />
-                    );
+                    if (imageEditingController.length > 1) {
+                      imageEditingController.shift();
+                      return (
+                        <ImageSquareInput
+                          key={index}
+                          value={item}
+                          color={colors}
+                          onChange={(event) => {
+                            handleChangeProperty(index, event);
+                          }}
+                          deleteItem={() => {
+                            handleRemoveItem(index);
+                          }}
+                        />
+                      );
+                    }
                     break;
                   case "image_square_rounded_comp":
-                    return (
-                      <ImageSquareRoundedInput
-                        key={index}
-                        value={item}
-                        color={colors}
-                        onChange={(event) => {
-                          handleChangeProperty(index, event);
-                        }}
-                        deleteItem={() => {
-                          handleRemoveItem(index);
-                        }}
-                      />
-                    );
+                    if (imageEditingController.length > 1) {
+                      imageEditingController.shift();
+                      return (
+                        <ImageSquareRoundedInput
+                          key={index}
+                          value={item}
+                          color={colors}
+                          onChange={(event) => {
+                            handleChangeProperty(index, event);
+                          }}
+                          deleteItem={() => {
+                            handleRemoveItem(index);
+                          }}
+                        />
+                      );
+                    }
                     break;
                   case "image_circle_comp":
-                    return (
-                      <ImageCircleInput
-                        key={index}
-                        value={item}
-                        color={colors}
-                        onChange={(event) => {
-                          handleChangeProperty(index, event);
-                        }}
-                        deleteItem={() => {
-                          handleRemoveItem(index);
-                        }}
-                      />
-                    );
+                    if (imageEditingController.length > 1) {
+                      imageEditingController.shift();
+                      return (
+                        <ImageCircleInput
+                          key={index}
+                          value={item}
+                          color={colors}
+                          onChange={(event) => {
+                            handleChangeProperty(index, event);
+                          }}
+                          deleteItem={() => {
+                            handleRemoveItem(index);
+                          }}
+                        />
+                      );
+                    }
                     break;
                   case "image_static_comp":
                     return (
@@ -364,22 +428,25 @@ export function CreateTemplatePage() {
                     );
                     break;
                   case "text_comp":
-                    return (
-                      <TextInput
-                        key={index}
-                        value={item}
-                        color={colors}
-                        align={align}
-                        fontWeight={fontWeight}
-                        fontFamily={fontFamily}
-                        onChange={(event) => {
-                          handleChangeProperty(index, event);
-                        }}
-                        deleteItem={() => {
-                          handleRemoveItem(index);
-                        }}
-                      />
-                    );
+                    if (textEditingController.length > 1) {
+                      textEditingController.shift();
+                      return (
+                        <TextInput
+                          key={index}
+                          value={item}
+                          color={colors}
+                          align={align}
+                          fontWeight={fontWeight}
+                          fontFamily={fontFamily}
+                          onChange={(event) => {
+                            handleChangeProperty(index, event);
+                          }}
+                          deleteItem={() => {
+                            handleRemoveItem(index);
+                          }}
+                        />
+                      );
+                    }
                     break;
                 }
               })}
@@ -397,16 +464,7 @@ export function CreateTemplatePage() {
                 required={true}
               />
               <div className="pt-8">
-                <ButtonComponentDefault
-                  title="+"
-                  onTap={() => {
-                    setComponents((prevComponents) => [
-                      ...prevComponents,
-                      tempSelectComp,
-                    ]);
-                    // setComponents([...components, tempSelectComp]);
-                  }}
-                />
+                <ButtonComponentDefault title="+" onTap={handleAddComp} />
               </div>
             </div>
 

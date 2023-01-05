@@ -5,7 +5,7 @@ import {
 } from "../components/InputComponent";
 import { LabelInputComponent } from "../components/LabelInputComponent";
 
-export function ImageLogoInput({ value, onChange, deleteItem, color }) {
+export function ImageLogoInput({ value, onChange, deleteItem, color}) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -108,6 +108,7 @@ export function ImageLogoInput({ value, onChange, deleteItem, color }) {
             placeholder=""
             value={value.imageEditingController}
             required={false}
+            hidden={true}
           />
         </div>
       </div>
@@ -115,7 +116,7 @@ export function ImageLogoInput({ value, onChange, deleteItem, color }) {
   );
 }
 
-export function ImageSquareInput({ value, onChange, deleteItem, color }) {
+export function ImageSquareInput({ value, onChange, deleteItem, color}) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -229,6 +230,7 @@ export function ImageSquareInput({ value, onChange, deleteItem, color }) {
             placeholder=""
             value={value.imageEditingController}
             required={false}
+            hidden={true}
           />
         </div>
       </div>
@@ -364,6 +366,7 @@ export function ImageSquareRoundedInput({
             placeholder=""
             value={value.imageEditingController}
             required={false}
+            hidden={true}
           />
         </div>
       </div>
@@ -485,6 +488,7 @@ export function ImageCircleInput({ value, onChange, deleteItem, color }) {
             placeholder=""
             value={value.imageEditingController}
             required={false}
+            hidden={true}
           />
         </div>
       </div>

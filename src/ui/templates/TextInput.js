@@ -146,6 +146,7 @@ export function TextInput({ value, onChange, deleteItem, color, align, fontWeigh
             placeholder=""
             value={value.textController}
             required={false}
+            hidden={true}
           />
         </div>
       </div>

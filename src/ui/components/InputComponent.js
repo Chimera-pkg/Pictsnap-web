@@ -8,18 +8,23 @@ export function InputComponentDefault({
   placeholder,
   value,
   required,
+  hidden = false,
 }) {
   return (
     <div className="">
-      <label
-        htmlFor={id}
-        className="block mt-2 text-xs font-semibold text-gray-600 uppercase"
-      >
-        {title}
-      </label>
+      {hidden ? (
+        ""
+      ) : (
+        <label
+          htmlFor={id}
+          className="block mt-2 text-xs font-semibold text-gray-600 uppercase"
+        >
+          {title}
+        </label>
+      )}
       <input
         id={id}
-        type={type}
+        type={hidden ? "hidden" : type}
         name={id}
         onChange={onChange}
         placeholder={placeholder}
