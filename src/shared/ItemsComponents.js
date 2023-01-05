@@ -1,4 +1,4 @@
-export const itemComponents = [
+export let itemComponents = [
   {
     id: "frame_comp",
     title: "Frame",
