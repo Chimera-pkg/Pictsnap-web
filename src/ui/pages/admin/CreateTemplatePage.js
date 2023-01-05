@@ -113,6 +113,7 @@ export function CreateTemplatePage() {
 
   const handleChangeProperty = (idx, event) => {
     let temp = [...components];
+    console.log(temp[idx]);
     if (handleCheckToInteger(event.target.name))
       temp[idx][event.target.name] = parseInt(event.target.value);
     else temp[idx][event.target.name] = event.target.value;
