@@ -8,7 +8,7 @@ export function ModalInformationLittle(props) {
           <div className="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-16 h-16 rounded-2xl p-3 border border-blue-100 text-indigo-400 bg-blue-50"
+              className="w-16 h-16 rounded-2xl p-3 border border-[#FFEBD4] text-[#FB8500] bg-[#FFEBD4]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -29,7 +29,7 @@ export function ModalInformationLittle(props) {
           </div>
           <button
             onClick={props.handleClose}
-            className="flex-no-shrink bg-indigo-500 px-5 ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-indigo-500 text-white rounded-full"
+            className="flex-no-shrink bg-[#FB8500] px-5 ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-[#FB8500] text-white rounded-full"
           >
             Tutup
           </button>
