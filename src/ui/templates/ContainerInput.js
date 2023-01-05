@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { InputComponentDefault } from "../components/InputComponent";
+import { DropdownComponentColor, InputComponentDefault } from "../components/InputComponent";
 import { LabelInputComponent } from "../components/LabelInputComponent";
 
-export function ContainerSquareInput({ value, onChange, deleteItem }) {
+export function ContainerSquareInput({ value, onChange, deleteItem, color }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -82,6 +82,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
             placeholder="px"
             value={value.groupColor}
             required={false}
+            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -100,7 +101,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem }) {
   );
 }
 
-export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
+export function ContainerSquareRoundedInput({ value, onChange, deleteItem,color }) {
   const [show, setShow] = useState(true);
 
   return (
@@ -173,7 +174,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <InputComponentDefault
+          <DropdownComponentColor
             id="groupColor"
             title="Color"
             type="number"
@@ -181,6 +182,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
             placeholder="px"
             value={value.groupColor}
             required={false}
+            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -208,7 +210,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem }) {
   );
 }
 
-export function ContainerCircleInput({ value, onChange, deleteItem }) {
+export function ContainerCircleInput({ value, onChange, deleteItem, color }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -288,6 +290,7 @@ export function ContainerCircleInput({ value, onChange, deleteItem }) {
             placeholder="px"
             value={value.groupColor}
             required={false}
+            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
