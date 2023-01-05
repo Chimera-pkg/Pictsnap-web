@@ -56,22 +56,11 @@ export function UpdateTemplatePage() {
     "FFFFFF",
   ]);
 
-  const align = [
-    'left',
-    'rigth',
-    'center',
-    'justify'
-  ]
+  const align = ["left", "rigth", "center", "justify"];
 
-  const fontWeight = [
-    'normal',
-    'light',
-    'bold'
-  ]
+  const fontWeight = ["normal", "light", "bold"];
 
-  const fontFamily = [
-    'Poppins'
-  ]
+  const fontFamily = ["Poppins"];
 
   const [modalInformationLittle, setModalInformationLittle] = useState({
     status: false,
@@ -146,13 +135,22 @@ export function UpdateTemplatePage() {
     setComponents(temp);
   };
 
-  const handleChangeProperty = (idx, event) => {
+  function handleChangeProperty(idx, event) {
     let temp = [...components];
-    if (handleCheckToInteger(event.target.name))
-      temp[idx][event.target.name] = parseInt(event.target.value);
-    else temp[idx][event.target.name] = event.target.value;
+
+    temp = temp.map(function (item, index) {
+      return index == idx
+        ? {
+            ...item,
+            [event.target.name]: handleCheckToInteger(event.target.name)
+              ? parseInt(event.target.value)
+              : event.target.value,
+          }
+        : item;
+    });
+
     setComponents(temp);
-  };
+  }
 
   return (
     <>

@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { DropdownComponentColor, InputComponentDefault } from "../components/InputComponent";
+import {
+  DropdownComponentColor,
+  InputComponentDefault,
+} from "../components/InputComponent";
 import { LabelInputComponent } from "../components/LabelInputComponent";
 
 export function FrameInput({ value, onChange, deleteItem, color }) {
