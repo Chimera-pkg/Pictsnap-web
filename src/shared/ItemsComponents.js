@@ -65,6 +65,17 @@ export const itemComponents = [
     imageEditingController: 0,
   },
   {
+    id: "image_static_comp",
+    title: "Image Static",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    width: 800,
+    height: 100,
+    src: "",
+  },
+  {
     id: "container_square_comp",
     title: "Container Square",
     top: 0,
@@ -117,42 +128,3 @@ export const itemComponents = [
     groupColor: 0,
   },
 ];
-
-// export const itemComponents = [
-//   {
-//     id: "frame_comp",
-//     title: "Frame",
-//   },
-//   {
-//     id: "image_logo_comp",
-//     title: "Image Logo",
-//   },
-//   {
-//     id: "image_square_comp",
-//     title: "Image Square",
-//   },
-//   {
-//     id: "image_square_rounded_comp",
-//     title: "Image Square Rounded",
-//   },
-//   {
-//     id: "image_circle_comp",
-//     title: "Image Circle",
-//   },
-//   {
-//     id: "container_square_comp",
-//     title: "Container Square",
-//   },
-//   {
-//     id: "container_square_rounded_comp",
-//     title: "Container Square Rounded",
-//   },
-//   {
-//     id: "container_circle_comp",
-//     title: "Container Circle",
-//   },
-//   {
-//     id: "text_comp",
-//     title: "Text",
-//   },
-// ];

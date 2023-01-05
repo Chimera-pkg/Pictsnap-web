@@ -24,6 +24,7 @@ import {
   ImageCircleInput,
   ImageSquareInput,
   ImageSquareRoundedInput,
+  ImageStaticInput,
 } from "src/ui/templates/ImageInput";
 import { FrameInput } from "src/ui/templates/FrameInput";
 import { TypeTemplates } from "src/shared/TypeTemplates";
@@ -307,6 +308,20 @@ export function UpdateTemplatePage() {
                       <ImageCircleInput
                         value={item}
                         color={colors}
+                        onChange={(event) => {
+                          handleChangeProperty(index, event);
+                        }}
+                        deleteItem={() => {
+                          handleRemoveItem(index);
+                        }}
+                      />
+                    );
+                    break;
+                  case "image_static_comp":
+                    return (
+                      <ImageStaticInput
+                        key={index}
+                        value={item}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}

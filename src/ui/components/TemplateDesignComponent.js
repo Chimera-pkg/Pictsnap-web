@@ -10,6 +10,7 @@ import {
   ImageLogoTemp,
   ImageSquareRoundedTemp,
   ImageSquareTemp,
+  ImageStaticTemp,
 } from "../templates/ImageTemp";
 import { RatioTemplateContext } from "src/context/RatioTemplateContext";
 import { useContext } from "react";
@@ -42,19 +43,34 @@ function SwicthCase({ components, colors }) {
             return <ImageSquareTemp item={item} colors={colors} key={idx} />;
             break;
           case "image_square_rounded_comp":
-            return <ImageSquareRoundedTemp item={item} colors={colors} key={idx} />;
+            return (
+              <ImageSquareRoundedTemp item={item} colors={colors} key={idx} />
+            );
             break;
           case "image_circle_comp":
             return <ImageCircleTemp item={item} colors={colors} key={idx} />;
             break;
+          case "image_static_comp":
+            return <ImageStaticTemp item={item} key={idx} />;
+            break;
           case "container_square_comp":
-            return <ContainerSquareTemp item={item} colors={colors} key={idx} />;
+            return (
+              <ContainerSquareTemp item={item} colors={colors} key={idx} />
+            );
             break;
           case "container_square_rounded_comp":
-            return <ContainerSquareRoundedTemp item={item} colors={colors} key={idx} />;
+            return (
+              <ContainerSquareRoundedTemp
+                item={item}
+                colors={colors}
+                key={idx}
+              />
+            );
             break;
           case "container_circle_comp":
-            return <ContainerCircleTemp item={item} colors={colors} key={idx} />;
+            return (
+              <ContainerCircleTemp item={item} colors={colors} key={idx} />
+            );
             break;
           case "text_comp":
             return <TextTemp item={item} colors={colors} key={idx} />;

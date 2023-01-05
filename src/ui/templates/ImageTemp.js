@@ -88,7 +88,9 @@ export function ImageCircleTemp({ item, colors }) {
 
   return (
     <div
-      className={`absolute overflow-hidden ${horizontal} top-[${item.top * ratioTemplate}px] bottom-[${item.bottom * ratioTemplate}px] w-[${
+      className={`absolute overflow-hidden ${horizontal} top-[${
+        item.top * ratioTemplate
+      }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
         item.width * ratioTemplate
       }px] h-[${item.height * ratioTemplate}px] bg-[#${
         colors[item.groupColor]
@@ -100,6 +102,28 @@ export function ImageCircleTemp({ item, colors }) {
         src={item.src == "" ? example : item.src}
         alt="image"
         className="h-full w-full m-auto object-cover"
+      />
+    </div>
+  );
+}
+
+export function ImageStaticTemp({ item }) {
+  const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
+  return (
+    <div
+      className={`absolute overflow-hidden left-[${
+        item.left * ratioTemplate
+      }px] top-[${item.top * ratioTemplate}px] right-[${
+        item.right * ratioTemplate
+      }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
+        item.width * ratioTemplate
+      }px] h-[${item.height * ratioTemplate}px]
+      }] `}
+    >
+      <img
+        src={item.src == "" ? logo : item.src}
+        alt="image"
+        className="h-full w-auto m-auto"
       />
     </div>
   );
