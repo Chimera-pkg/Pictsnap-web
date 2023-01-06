@@ -10,7 +10,7 @@ import {
 import { TemplateDesign } from "src/ui/components/TemplateDesignComponent";
 import { LoadingContext } from "src/context/LoadingContext";
 import { Loading } from "src/ui/components/Loader";
-import { ModalInformationLittle } from "src/ui/components/ModalInformationComponent";
+import { ModalConfirmationComponent, ModalInformationLittle } from "src/ui/components/ModalInformationComponent";
 
 export function HomePage() {
   const navigate = useNavigate();
@@ -19,10 +19,13 @@ export function HomePage() {
   const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[0]);
 
   const { loading, setLoading } = useContext(LoadingContext);
-  const [modalInformationLittle, setModalInformationLittle] = useState({
+  const [modalConfirmationComponent, setModalConfirmationComponent] = useState({
     status: false,
-    description: "",
+      content1: "",
+      content2: "",
   });
+
+  const [tempName, setTempName] = useState("")
 
   useEffect(() => {
     fetch(typeTemplate);
@@ -40,35 +43,48 @@ export function HomePage() {
     setTemplates(temp);
   }
 
-  const handleDeleteTemp = async (name, event) => {
+  const handleDeleteTemp = async () => {
     setLoading(true);
 
-    const res = await configServices.delete(name);
+    const res = await configServices.delete(tempName);
 
     setLoading(false);
 
-    setModalInformationLittle({
+    setModalConfirmationComponent({
+      status: false,
+      content1: "",
+      content2: "",
+    });
+
+    window.location.reload(false)
+  };
+
+  const deleteTemp = async (name) => {
+    setTempName(name)
+    setModalConfirmationComponent({
       status: true,
-      description: `Template berhasil dihapus`,
+      content1: `Hapus template?`,
+      content2: `Template tidak dapat dikembalikan setelah dihapus`,
     });
   };
 
-  const handleCloseModal = () => {
-    setModalInformationLittle({
+  const handleCloseModal = ()  => {
+    setTempName("")
+    setModalConfirmationComponent({
       status: false,
-      title: "",
-      description: "",
+      content1: "",
+      content2: "",
     });
-    window.location.reload(false)
   };
 
   return (
     <>
       <Loading loading={loading} />
-      <ModalInformationLittle
-        status={modalInformationLittle.status}
-        title={modalInformationLittle.title}
-        description={modalInformationLittle.description}
+      <ModalConfirmationComponent
+        status={modalConfirmationComponent.status}
+        content1={modalConfirmationComponent.content1}
+        content2={modalConfirmationComponent.content2}
+        handleSubmit={handleDeleteTemp}
         handleClose={handleCloseModal}
       />
       <div>
@@ -93,7 +109,7 @@ export function HomePage() {
           handleEdit={(name) => {
             navigate("/template/" + name + "/" + typeTemplate.id);
           }}
-          handleDelete={handleDeleteTemp}
+          handleDelete={deleteTemp}
         />
       </div>
     </>
