@@ -57,7 +57,7 @@ export function UpdateTemplatePage() {
     "FFFFFF",
   ]);
 
-  const align = ["left", "rigth", "center", "justify"];
+  const align = ["left", "right", "center", "justify"];
 
   const fontWeight = ["normal", "light", "bold"];
 

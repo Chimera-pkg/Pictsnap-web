@@ -19,7 +19,7 @@ export function ImageLogoTemp({ item, colors }) {
       <img
         src={item.src == "" ? logo : item.src}
         alt="image"
-        className="h-full w-auto m-auto"
+        className="h-full w-full m-auto object-cover"
       />
     </div>
   );
@@ -123,7 +123,7 @@ export function ImageStaticTemp({ item }) {
       <img
         src={item.src == "" ? logo : item.src}
         alt="image"
-        className="h-full w-auto m-auto"
+        className="h-full w-full m-auto object-cover"
       />
     </div>
   );
