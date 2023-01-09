@@ -93,7 +93,7 @@ export function ContainerSquareInput({ value, onChange, deleteItem, color }) {
             onChange={onChange}
             placeholder="px"
             value={value.border}
-            required={false}
+            required={true}
           />
         </div>
       </div>
@@ -193,7 +193,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem,color 
             onChange={onChange}
             placeholder="px"
             value={value.border}
-            required={false}
+            required={true}
           />
           <InputComponentDefault
             id="rounded"
@@ -202,7 +202,7 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem,color 
             onChange={onChange}
             placeholder="px"
             value={value.rounded}
-            required={false}
+            required={true}
           />
         </div>
       </div>
@@ -301,7 +301,7 @@ export function ContainerCircleInput({ value, onChange, deleteItem, color }) {
             onChange={onChange}
             placeholder="px"
             value={value.border}
-            required={false}
+            required={true}
           />
         </div>
       </div>

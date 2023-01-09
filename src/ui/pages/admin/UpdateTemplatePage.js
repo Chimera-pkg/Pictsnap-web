@@ -58,10 +58,12 @@ export function UpdateTemplatePage() {
   ]);
 
   const align = ["left", "right", "center", "justify"];
-
   const fontWeight = ["normal", "light", "bold"];
-
-  const fontFamily = ["Poppins"];
+  const fontFamily = ["Raleway", "Nunito", "Poppins"];
+  const fontSize = [
+    10, 11, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 52, 56, 64, 72, 84, 92,
+    100,
+  ];
 
   const imageEditingController = [0, 0, 0, 0, 0, 0];
   const textEditingController = [0, 0, 0, 0, 0, 0];
@@ -452,6 +454,7 @@ export function UpdateTemplatePage() {
                           value={item}
                           color={colors}
                           align={align}
+                          fontSize={fontSize}
                           fontWeight={fontWeight}
                           fontFamily={fontFamily}
                           onChange={(event) => {

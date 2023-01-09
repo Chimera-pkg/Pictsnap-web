@@ -207,7 +207,7 @@ export function ImageSquareInput({ value, onChange, deleteItem, color}) {
             onChange={onChange}
             placeholder="px"
             value={value.border}
-            required={false}
+            required={true}
           />
         </div>
         <div className="grid grid-cols-3 gap-4">
@@ -334,7 +334,7 @@ export function ImageSquareRoundedInput({
             onChange={onChange}
             placeholder="px"
             value={value.border}
-            required={false}
+            required={true}
           />
           <InputComponentDefault
             id="rounded"
@@ -343,7 +343,7 @@ export function ImageSquareRoundedInput({
             onChange={onChange}
             placeholder="px"
             value={value.rounded}
-            required={false}
+            required={true}
           />
         </div>
         <div className="grid grid-cols-3 gap-4">
@@ -465,7 +465,7 @@ export function ImageCircleInput({ value, onChange, deleteItem, color }) {
             onChange={onChange}
             placeholder="px"
             value={value.border}
-            required={false}
+            required={true}
           />
         </div>
         <div className="grid grid-cols-3 gap-4">
