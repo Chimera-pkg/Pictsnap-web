@@ -76,18 +76,6 @@ export function FrameInput({ value, onChange, deleteItem, color }) {
             required={false}
           />
         </div>
-        <div className="grid grid-cols-4 gap-4">
-          <DropdownComponentColor
-            id="groupColor"
-            title="Color"
-            type="number"
-            onChange={onChange}
-            items={color}
-            placeholder="px"
-            value={value.groupColor}
-            required={false}
-          />
-        </div>
         <div className="grid grid-cols-1 gap-4">
           <InputComponentDefault
             id="svg"

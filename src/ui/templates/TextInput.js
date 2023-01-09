@@ -2,7 +2,7 @@ import { useState } from "react";
 import { DropdownComponentColor, DropdownComponentDefault, InputComponentDefault } from "../components/InputComponent";
 import { LabelInputComponent } from "../components/LabelInputComponent";
 
-export function TextInput({ value, onChange, deleteItem, color, align, fontWeight, fontFamily }) {
+export function TextInput({ value, onChange, deleteItem, color, align, fontWeight, fontFamily, fontSize }) {
   const [show, setShow] = useState(true);
   return (
     <div>
@@ -86,14 +86,15 @@ export function TextInput({ value, onChange, deleteItem, color, align, fontWeigh
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
-          <InputComponentDefault
+          <DropdownComponentDefault
             id="fontSize"
             title="Font Size"
             type="number"
             onChange={onChange}
-            placeholder="px"
+            placeholder=""
             value={value.fontSize}
             required={false}
+            items={fontSize}
           />
           <DropdownComponentDefault
             id="textAlign"
