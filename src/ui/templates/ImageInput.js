@@ -97,7 +97,7 @@ export function ImageLogoInput({ value, onChange, deleteItem, color}) {
               onChange={onChange}
               placeholder="http://image.com"
               value={value.src}
-              required={false}
+              required={true}
             />
           </div>
           <InputComponentDefault
@@ -219,7 +219,7 @@ export function ImageSquareInput({ value, onChange, deleteItem, color}) {
               onChange={onChange}
               placeholder="http://image.com"
               value={value.src}
-              required={false}
+              required={true}
             />
           </div>
           <InputComponentDefault
@@ -355,7 +355,7 @@ export function ImageSquareRoundedInput({
               onChange={onChange}
               placeholder="http://image.com"
               value={value.src}
-              required={false}
+              required={true}
             />
           </div>
           <InputComponentDefault
@@ -477,7 +477,7 @@ export function ImageCircleInput({ value, onChange, deleteItem, color }) {
               onChange={onChange}
               placeholder="http://image.com"
               value={value.src}
-              required={false}
+              required={true}
             />
           </div>
           <InputComponentDefault

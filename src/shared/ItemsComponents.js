@@ -20,7 +20,7 @@ export let itemComponents = [
     width: 100,
     height: 100,
     groupColor: 0,
-    src: "",
+    src: "https://firebasestorage.googleapis.com/v0/b/pictsnap-next.appspot.com/o/example.jpg?alt=media&token=06cf52ea-0783-4f2a-a10b-f244ae6ce411",
     imageEditingController: 0,
   },
   {
@@ -34,7 +34,7 @@ export let itemComponents = [
     height: 100,
     groupColor: 0,
     border: 0,
-    src: "",
+    src: "https://firebasestorage.googleapis.com/v0/b/pictsnap-next.appspot.com/o/example.jpg?alt=media&token=06cf52ea-0783-4f2a-a10b-f244ae6ce411",
     imageEditingController: 0,
   },
   {
@@ -49,7 +49,7 @@ export let itemComponents = [
     groupColor: 0,
     rounded: 10,
     border: 0,
-    src: "",
+    src: "https://firebasestorage.googleapis.com/v0/b/pictsnap-next.appspot.com/o/example.jpg?alt=media&token=06cf52ea-0783-4f2a-a10b-f244ae6ce411",
     imageEditingController: 0,
   },
   {
@@ -63,7 +63,7 @@ export let itemComponents = [
     height: 100,
     groupColor: 0,
     border: 0,
-    src: "",
+    src: "https://firebasestorage.googleapis.com/v0/b/pictsnap-next.appspot.com/o/example.jpg?alt=media&token=06cf52ea-0783-4f2a-a10b-f244ae6ce411",
     imageEditingController: 0,
   },
   {
