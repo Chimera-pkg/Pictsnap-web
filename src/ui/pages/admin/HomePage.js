@@ -10,7 +10,10 @@ import {
 import { TemplateDesign } from "src/ui/components/TemplateDesignComponent";
 import { LoadingContext } from "src/context/LoadingContext";
 import { Loading } from "src/ui/components/Loader";
-import { ModalConfirmationComponent, ModalInformationLittle } from "src/ui/components/ModalInformationComponent";
+import {
+  ModalConfirmationComponent,
+  ModalInformationLittle,
+} from "src/ui/components/ModalInformationComponent";
 
 export function HomePage() {
   const navigate = useNavigate();
@@ -21,11 +24,11 @@ export function HomePage() {
   const { loading, setLoading } = useContext(LoadingContext);
   const [modalConfirmationComponent, setModalConfirmationComponent] = useState({
     status: false,
-      content1: "",
-      content2: "",
+    content1: "",
+    content2: "",
   });
 
-  const [tempName, setTempName] = useState("")
+  const [tempName, setTempName] = useState("");
 
   useEffect(() => {
     fetch(typeTemplate);
@@ -56,11 +59,11 @@ export function HomePage() {
       content2: "",
     });
 
-    window.location.reload(false)
+    window.location.reload(false);
   };
 
   const deleteTemp = async (name) => {
-    setTempName(name)
+    setTempName(name);
     setModalConfirmationComponent({
       status: true,
       content1: `Hapus template?`,
@@ -68,8 +71,8 @@ export function HomePage() {
     });
   };
 
-  const handleCloseModal = ()  => {
-    setTempName("")
+  const handleCloseModal = () => {
+    setTempName("");
     setModalConfirmationComponent({
       status: false,
       content1: "",
@@ -86,6 +89,7 @@ export function HomePage() {
         content2={modalConfirmationComponent.content2}
         handleSubmit={handleDeleteTemp}
         handleClose={handleCloseModal}
+        titleAction="Hapus"
       />
       <div>
         <h1 className="hidden">Daftar Template</h1>

@@ -56,7 +56,6 @@ export function ModalConfirmationComponent(props) {
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                 Perhatikan!
               </h3>
-              
             </div>
             {/* Modal body */}
             <div className="p-6 space-y-6">
@@ -74,7 +73,7 @@ export function ModalConfirmationComponent(props) {
                 onClick={props.handleSubmit}
                 className="flex-no-shrink bg-[#FB8500] hover:bg-[#FFB703] px-5 ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-[#FB8500] text-white rounded-lg"
               >
-                Kirim
+                {props.titleAction ?? "Submit"}
               </button>
               <button
                 type="button"
@@ -89,6 +88,6 @@ export function ModalConfirmationComponent(props) {
       </div>
     );
   } else {
-    return (<></>);
+    return <></>;
   }
 }
