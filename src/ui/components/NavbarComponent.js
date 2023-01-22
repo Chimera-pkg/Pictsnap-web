@@ -10,12 +10,12 @@ export function NavbarAdminComponent() {
   const { sidebar, setSidebar } = useContext(SidebarContext);
 
   return (
-    <div className="fixed z-40 md:w-full md:top-0 md:z-20 flex flex-row flex-wrap items-center bg-white h-20 w-full px-6 shadow-sm">
+    <div className="fixed z-40 lg:w-full md:top-0 md:z-20 flex flex-row flex-wrap items-center bg-white h-20 w-full px-6 shadow-sm">
       <div className="flex-none w-56 flex flex-row items-center">
         <button
           data-collapse-toggle="navbar-default"
           type="button"
-          className="inline-flex items-center p-2 mr-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 mr-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-default"
           aria-expanded="false"
           onClick={() => setSidebar(!sidebar)}
@@ -28,19 +28,20 @@ export function NavbarAdminComponent() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              ffillRule="evenodd"
+              ffillrule="evenodd"
               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
               clipRule="evenodd"
             ></path>
           </svg>
         </button>
-        <Link to="/">
-          <a className="flex items-center text-2xl font-semibold text-gray-900">
-            <img className="w-6 h-6 mr-2" src={Logo} alt="logo" />
-            <h2 className="text-sm">
-              PictSnap <span className="text-[#FB8500]">Builder</span>
-            </h2>
-          </a>
+        <Link
+          to="/"
+          className="flex items-center text-2xl font-semibold text-gray-900"
+        >
+          <img className="w-6 h-6 mr-2" src={Logo} alt="logo" />
+          <h2 className="text-sm">
+            PictSnap <span className="text-[#FB8500]">Builder</span>
+          </h2>
         </Link>
 
         <button
@@ -88,14 +89,14 @@ export function NavbarLanding() {
   return (
     <nav className="bg-white border-gray-200 px-6 sm:px-4 py-2.5 rounded dark:bg-gray-900 fixed z-50 w-full shadow-md shadow-gray-100">
       <div className="container flex flex-wrap justify-between mx-auto items-center">
-        <a href="/" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src={Logo} className="mr-3 h-6 sm:h-9" alt="Nares Logo" />
           <div className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
             <h2 className="">
               Nares <span className="text-indigo-600">Certificate</span>
             </h2>
           </div>
-        </a>
+        </Link>
 
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">

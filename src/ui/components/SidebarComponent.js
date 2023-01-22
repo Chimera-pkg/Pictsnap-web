@@ -65,7 +65,7 @@ export function SidebarAdminComponent() {
   return (
     <div
       id="sideBar"
-      className={`md:flex flex-col flex-wrap bg-white text-dark border-r border-gray-100 p-6 min-h-screen md:w-2/12 md:shadow-xl pt-28 lg:pt-16 fixed lg:static 
+      className={`lg:flex flex-col flex-wrap bg-white text-dark border-r border-gray-100 p-6 min-h-screen lg:w-2/12 lg:shadow-xl pt-28 lg:pt-16 fixed lg:static 
       ${sidebar ? "flex z-30" : "hidden"}`}
     >
       <div className="flex flex-col">

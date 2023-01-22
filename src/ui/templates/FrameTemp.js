@@ -5,23 +5,22 @@ import { RatioTemplateContext } from "src/context/RatioTemplateContext";
 export function FrameTemp({ item, colors }) {
   const { ratioTemplate, setRatioTemplate } = useContext(RatioTemplateContext);
 
-  let vertical = "";
-  if (item.top === null || item.top === undefined) {
-    vertical = `bottom-[${item.bottom * ratioTemplate}px]`;
-  } else {
-    vertical = `top-[${item.top * ratioTemplate}px]`;
-  }
-
   return (
     <div
-      className={`absolute left-[${item.left * ratioTemplate}px] right-[${
-        item.right * ratioTemplate
-      }px] ${vertical} ${item.height}`}
+      className={`absolute left-[${
+        item.left == null ? undefined : item.left * ratioTemplate
+      }px] right-[${
+        item.right == null ? undefined : item.right * ratioTemplate
+      }px] top-[${
+        item.top == null ? undefined : item.top * ratioTemplate
+      }px] bottom-[${
+        item.bottom == null ? undefined : item.bottom * ratioTemplate
+      }px]`}
     >
       <SVG
         src={item.svg}
-        width={item.width * ratioTemplate}
-        height={item.height * ratioTemplate}
+        width={item.width == null ? undefined : item.width * ratioTemplate}
+        height={item.height == null ? undefined : item.height * ratioTemplate}
       />
     </div>
   );

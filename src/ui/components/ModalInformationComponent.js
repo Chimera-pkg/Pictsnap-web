@@ -8,7 +8,7 @@ export function ModalInformationLittle(props) {
           <div className="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-16 h-16 rounded-2xl p-3 border border-blue-100 text-indigo-400 bg-blue-50"
+              className="w-16 h-16 rounded-2xl p-3 border border-[#FFEBD4] text-[#FB8500] bg-[#FFEBD4]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -29,7 +29,7 @@ export function ModalInformationLittle(props) {
           </div>
           <button
             onClick={props.handleClose}
-            className="flex-no-shrink bg-indigo-500 px-5 ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-indigo-500 text-white rounded-full"
+            className="flex-no-shrink bg-[#FB8500] px-5 ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-[#FB8500] text-white rounded-full"
           >
             Tutup
           </button>
@@ -50,13 +50,12 @@ export function ModalConfirmationComponent(props) {
       >
         <div className="relative max-w-2xl md:h-auto">
           {/* Modal content */}
-          <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <div className="relative bg-white rounded-lg shadow dark:bg-gray-800">
             {/* Modal header */}
             <div className="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                 Perhatikan!
               </h3>
-              
             </div>
             {/* Modal body */}
             <div className="p-6 space-y-6">
@@ -70,15 +69,13 @@ export function ModalConfirmationComponent(props) {
             {/* Modal footer */}
             <div className="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
               <button
-                data-modal-toggle="defaultModal"
                 type="button"
                 onClick={props.handleSubmit}
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="flex-no-shrink bg-[#FB8500] hover:bg-[#FFB703] px-5 ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-[#FB8500] text-white rounded-lg"
               >
-                Kirim
+                {props.titleAction ?? "Submit"}
               </button>
               <button
-                data-modal-toggle="defaultModal"
                 type="button"
                 onClick={props.handleClose}
                 className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
@@ -91,6 +88,6 @@ export function ModalConfirmationComponent(props) {
       </div>
     );
   } else {
-    return (<></>);
+    return <></>;
   }
 }

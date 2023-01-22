@@ -24,11 +24,16 @@ import {
   ImageCircleInput,
   ImageSquareInput,
   ImageSquareRoundedInput,
+  ImageStaticInput,
 } from "src/ui/templates/ImageInput";
 import { FrameInput } from "src/ui/templates/FrameInput";
 import { TypeTemplates } from "src/shared/TypeTemplates";
 import { PosterTemplate } from "src/shared/TestTemplate";
 import { ConfigServices } from "src/services/ConfigServices";
+import {
+  handleCheckToInteger,
+  handleConvertToInteger,
+} from "src/shared/HandleInputStringToInteger";
 
 export function UpdateTemplatePage() {
   const navigate = useNavigate();
@@ -39,7 +44,9 @@ export function UpdateTemplatePage() {
   const { loading, setLoading } = useContext(LoadingContext);
   const configServices = new ConfigServices();
 
-  const [typeTemplate, setTypeTemplate] = useState(TypeTemplates[typeTemplateId]);
+  const [typeTemplate, setTypeTemplate] = useState(
+    TypeTemplates[typeTemplateId]
+  );
   const [components, setComponents] = useState([]);
   const [tempSelectComp, setTempSelectComp] = useState(itemComponents[0]);
 
@@ -50,6 +57,17 @@ export function UpdateTemplatePage() {
     "FFFFFF",
   ]);
 
+  const align = ["left", "right", "center", "justify"];
+  const fontWeight = ["normal", "light", "bold"];
+  const fontFamily = ["Raleway", "Nunito", "Poppins"];
+  const fontSize = [
+    10, 11, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 52, 56, 64, 72, 84, 92,
+    100,
+  ];
+
+  const imageEditingController = [0, 0, 0, 0, 0, 0];
+  const textEditingController = [0, 0, 0, 0, 0, 0];
+
   const [modalInformationLittle, setModalInformationLittle] = useState({
     status: false,
     description: "",
@@ -59,8 +77,6 @@ export function UpdateTemplatePage() {
   const [resConfigs, setResConfigs] = useState([]);
 
   const name = location.pathname.split("/")[2];
-
-  // setTypeTemplate(TypeTemplates[typeTemplateId]);
 
   useEffect(() => {
     fetch(name);
@@ -78,8 +94,27 @@ export function UpdateTemplatePage() {
     event.preventDefault();
     setLoading(true);
 
-    let temp = [...components];
-    temp.pop();
+    let temp = [];
+
+    let imageController = 0;
+    let textController = 0;
+
+    components.map((item, index) => {
+      if (
+        item.id == "image_logo_comp" ||
+        item.id == "image_square_comp" ||
+        item.id == "image_square_rounded_comp" ||
+        item.id == "image_circle_comp"
+      ) {
+        item.imageEditingController = imageController++;
+      }
+
+      if (item.id == "text_comp") {
+        item.textController = textController++;
+      }
+
+      if (item.id != "colors_comp") temp.push(handleConvertToInteger(item));
+    });
 
     const content_json = [
       ...temp,
@@ -115,15 +150,59 @@ export function UpdateTemplatePage() {
 
   const handleRemoveItem = (idx) => {
     const temp = [...components];
+    if (
+      temp[idx].id == "image_logo_comp" ||
+      temp[idx].id == "image_square_comp" ||
+      temp[idx].id == "image_square_rounded_comp" ||
+      temp[idx].id == "image_circle_comp"
+    ) {
+      imageEditingController.push(0);
+    }
+
+    if (temp[idx].id == "text_comp") {
+      textEditingController.push(0);
+    }
     temp.splice(idx, 1);
 
     setComponents(temp);
   };
 
-  const handleChangeProperty = (idx, event) => {
+  function handleChangeProperty(idx, event) {
     let temp = [...components];
-    temp[idx][event.target.name] = event.target.value;
+
+    temp = temp.map(function (item, index) {
+      return index == idx
+        ? {
+            ...item,
+            [event.target.name]: handleCheckToInteger(event.target.name)
+              ? parseInt(event.target.value)
+              : event.target.value,
+          }
+        : item;
+    });
+
     setComponents(temp);
+  }
+
+  const handleAddComp = () => {
+    if (
+      tempSelectComp.id == "image_logo_comp" ||
+      tempSelectComp.id == "image_square_comp" ||
+      tempSelectComp.id == "image_square_rounded_comp" ||
+      tempSelectComp.id == "image_circle_comp"
+    ) {
+      if (imageEditingController.length == 1) {
+        return;
+      }
+    }
+
+    if (tempSelectComp.id == "text_comp") {
+      if (textEditingController.length == 1) {
+        return;
+      }
+    }
+
+    setComponents([...components, tempSelectComp]);
   };
 
   return (
@@ -223,7 +302,9 @@ export function UpdateTemplatePage() {
                   case "frame_comp":
                     return (
                       <FrameInput
+                        key={index}
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -234,47 +315,81 @@ export function UpdateTemplatePage() {
                     );
                     break;
                   case "image_logo_comp":
-                    return (
-                      <ImageLogoInput
-                        value={item}
-                        onChange={(event) => {
-                          handleChangeProperty(index, event);
-                        }}
-                        deleteItem={() => {
-                          handleRemoveItem(index);
-                        }}
-                      />
-                    );
+                    if (imageEditingController.length > 1) {
+                      imageEditingController.shift();
+                      return (
+                        <ImageLogoInput
+                          key={index}
+                          value={item}
+                          color={colors}
+                          onChange={(event) => {
+                            handleChangeProperty(index, event);
+                          }}
+                          deleteItem={() => {
+                            handleRemoveItem(index);
+                          }}
+                        />
+                      );
+                    }
                     break;
                   case "image_square_comp":
-                    return (
-                      <ImageSquareInput
-                        value={item}
-                        onChange={(event) => {
-                          handleChangeProperty(index, event);
-                        }}
-                        deleteItem={() => {
-                          handleRemoveItem(index);
-                        }}
-                      />
-                    );
+                    if (imageEditingController.length > 1) {
+                      imageEditingController.shift();
+                      return (
+                        <ImageSquareInput
+                          key={index}
+                          value={item}
+                          color={colors}
+                          onChange={(event) => {
+                            handleChangeProperty(index, event);
+                          }}
+                          deleteItem={() => {
+                            handleRemoveItem(index);
+                          }}
+                        />
+                      );
+                    }
                     break;
                   case "image_square_rounded_comp":
-                    return (
-                      <ImageSquareRoundedInput
-                        value={item}
-                        onChange={(event) => {
-                          handleChangeProperty(index, event);
-                        }}
-                        deleteItem={() => {
-                          handleRemoveItem(index);
-                        }}
-                      />
-                    );
+                    if (imageEditingController.length > 1) {
+                      imageEditingController.shift();
+                      return (
+                        <ImageSquareRoundedInput
+                          key={index}
+                          value={item}
+                          color={colors}
+                          onChange={(event) => {
+                            handleChangeProperty(index, event);
+                          }}
+                          deleteItem={() => {
+                            handleRemoveItem(index);
+                          }}
+                        />
+                      );
+                    }
                     break;
                   case "image_circle_comp":
+                    if (imageEditingController.length > 1) {
+                      imageEditingController.shift();
+                      return (
+                        <ImageCircleInput
+                          key={index}
+                          value={item}
+                          color={colors}
+                          onChange={(event) => {
+                            handleChangeProperty(index, event);
+                          }}
+                          deleteItem={() => {
+                            handleRemoveItem(index);
+                          }}
+                        />
+                      );
+                    }
+                    break;
+                  case "image_static_comp":
                     return (
-                      <ImageCircleInput
+                      <ImageStaticInput
+                        key={index}
                         value={item}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
@@ -288,7 +403,9 @@ export function UpdateTemplatePage() {
                   case "container_square_comp":
                     return (
                       <ContainerSquareInput
+                        key={index}
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -301,7 +418,9 @@ export function UpdateTemplatePage() {
                   case "container_square_rounded_comp":
                     return (
                       <ContainerSquareRoundedInput
+                        key={index}
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -314,7 +433,9 @@ export function UpdateTemplatePage() {
                   case "container_circle_comp":
                     return (
                       <ContainerCircleInput
+                        key={index}
                         value={item}
+                        color={colors}
                         onChange={(event) => {
                           handleChangeProperty(index, event);
                         }}
@@ -325,17 +446,26 @@ export function UpdateTemplatePage() {
                     );
                     break;
                   case "text_comp":
-                    return (
-                      <TextInput
-                        value={item}
-                        onChange={(event) => {
-                          handleChangeProperty(index, event);
-                        }}
-                        deleteItem={() => {
-                          handleRemoveItem(index);
-                        }}
-                      />
-                    );
+                    if (textEditingController.length > 1) {
+                      textEditingController.shift();
+                      return (
+                        <TextInput
+                          key={index}
+                          value={item}
+                          color={colors}
+                          align={align}
+                          fontSize={fontSize}
+                          fontWeight={fontWeight}
+                          fontFamily={fontFamily}
+                          onChange={(event) => {
+                            handleChangeProperty(index, event);
+                          }}
+                          deleteItem={() => {
+                            handleRemoveItem(index);
+                          }}
+                        />
+                      );
+                    }
                     break;
                 }
               })}
@@ -353,12 +483,7 @@ export function UpdateTemplatePage() {
                 required={true}
               />
               <div className="pt-8">
-                <ButtonComponentDefault
-                  title="+"
-                  onTap={() => {
-                    setComponents([...components, tempSelectComp]);
-                  }}
-                />
+                <ButtonComponentDefault title="+" onTap={handleAddComp} />
               </div>
             </div>
 
@@ -377,7 +502,7 @@ export function UpdateTemplatePage() {
               Hallo Admin👋<span className="font-normal"></span>
             </h1>
 
-            <div className="mx-auto">
+            <div className="mx-auto overflow-auto">
               <TemplateDesign
                 type={TypeTemplates[typeTemplate.id]}
                 components={components}

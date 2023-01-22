@@ -1,4 +1,4 @@
-export const itemComponents = [
+export let itemComponents = [
   {
     id: "frame_comp",
     title: "Frame",
@@ -8,7 +8,6 @@ export const itemComponents = [
     left: 0,
     width: 100,
     height: 100,
-    groupColor: 0,
     svg: "",
   },
   {
@@ -21,7 +20,7 @@ export const itemComponents = [
     width: 100,
     height: 100,
     groupColor: 0,
-    src: "",
+    src: "https://firebasestorage.googleapis.com/v0/b/pictsnap-next.appspot.com/o/example.jpg?alt=media&token=06cf52ea-0783-4f2a-a10b-f244ae6ce411",
     imageEditingController: 0,
   },
   {
@@ -34,7 +33,8 @@ export const itemComponents = [
     width: 100,
     height: 100,
     groupColor: 0,
-    src: "",
+    border: 0,
+    src: "https://firebasestorage.googleapis.com/v0/b/pictsnap-next.appspot.com/o/example.jpg?alt=media&token=06cf52ea-0783-4f2a-a10b-f244ae6ce411",
     imageEditingController: 0,
   },
   {
@@ -48,7 +48,8 @@ export const itemComponents = [
     height: 100,
     groupColor: 0,
     rounded: 10,
-    src: "",
+    border: 0,
+    src: "https://firebasestorage.googleapis.com/v0/b/pictsnap-next.appspot.com/o/example.jpg?alt=media&token=06cf52ea-0783-4f2a-a10b-f244ae6ce411",
     imageEditingController: 0,
   },
   {
@@ -61,8 +62,20 @@ export const itemComponents = [
     width: 100,
     height: 100,
     groupColor: 0,
-    src: "",
+    border: 0,
+    src: "https://firebasestorage.googleapis.com/v0/b/pictsnap-next.appspot.com/o/example.jpg?alt=media&token=06cf52ea-0783-4f2a-a10b-f244ae6ce411",
     imageEditingController: 0,
+  },
+  {
+    id: "image_static_comp",
+    title: "Image Static",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    width: 800,
+    height: 100,
+    src: "",
   },
   {
     id: "container_square_comp",
@@ -117,42 +130,3 @@ export const itemComponents = [
     groupColor: 0,
   },
 ];
-
-// export const itemComponents = [
-//   {
-//     id: "frame_comp",
-//     title: "Frame",
-//   },
-//   {
-//     id: "image_logo_comp",
-//     title: "Image Logo",
-//   },
-//   {
-//     id: "image_square_comp",
-//     title: "Image Square",
-//   },
-//   {
-//     id: "image_square_rounded_comp",
-//     title: "Image Square Rounded",
-//   },
-//   {
-//     id: "image_circle_comp",
-//     title: "Image Circle",
-//   },
-//   {
-//     id: "container_square_comp",
-//     title: "Container Square",
-//   },
-//   {
-//     id: "container_square_rounded_comp",
-//     title: "Container Square Rounded",
-//   },
-//   {
-//     id: "container_circle_comp",
-//     title: "Container Circle",
-//   },
-//   {
-//     id: "text_comp",
-//     title: "Text",
-//   },
-// ];
