@@ -486,7 +486,7 @@ export function CreateTemplatePage() {
               Hallo Admin👋<span className="font-normal"></span>
             </h1>
 
-            <div className="mx-auto">
+            <div className="mx-auto overflow-auto">
               <TemplateDesign
                 type={TypeTemplates[typeTemplate.id]}
                 components={components}
