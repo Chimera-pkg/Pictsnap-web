@@ -509,9 +509,30 @@ export function UpdateTemplatePage() {
                 colors={colors}
               />
             </div>
+            <div className="template-size mt-4">
+              <p className="font-semibold">Ukuran Template</p>
+              <p className="text">{getTemplateSize(typeTemplate.id)}</p>
+            </div>
           </div>
         </div>
       </div>
     </>
   );
+}
+
+function getTemplateSize(id) {
+  switch (id) {
+    case 0:
+    case 1:
+      return "800x2000";
+    case 2:
+    case 3:
+      return "940x1400";
+    case 4:
+      return "640x360";
+    case 5:
+      return "1600x200";
+    case 6:
+      return "750x500";
+  }
 }
