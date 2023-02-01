@@ -76,18 +76,6 @@ export function ImageLogoInput({ value, onChange, deleteItem, color}) {
             required={false}
           />
         </div>
-        <div className="grid grid-cols-4 gap-4">
-          <DropdownComponentColor
-            id="groupColor"
-            title="Color"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.groupColor}
-            required={false}
-            items={color}
-          />
-        </div>
         <div className="grid grid-cols-3 gap-4">
           <div className="cols-span-2">
             <InputComponentDefault
@@ -185,18 +173,6 @@ export function ImageSquareInput({ value, onChange, deleteItem, color}) {
             placeholder="px"
             value={value.height}
             required={false}
-          />
-        </div>
-        <div className="grid grid-cols-4 gap-4">
-          <DropdownComponentColor
-            id="groupColor"
-            title="Color"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.groupColor}
-            required={false}
-            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -312,18 +288,6 @@ export function ImageSquareRoundedInput({
             placeholder="px"
             value={value.height}
             required={false}
-          />
-        </div>
-        <div className="grid grid-cols-4 gap-4">
-          <DropdownComponentColor
-            id="groupColor"
-            title="Color"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.groupColor}
-            required={false}
-            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
@@ -443,18 +407,6 @@ export function ImageCircleInput({ value, onChange, deleteItem, color }) {
             placeholder="px"
             value={value.height}
             required={false}
-          />
-        </div>
-        <div className="grid grid-cols-4 gap-4">
-          <DropdownComponentColor
-            id="groupColor"
-            title="Color"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.groupColor}
-            required={false}
-            items={color}
           />
         </div>
         <div className="grid grid-cols-4 gap-4">
