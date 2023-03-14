@@ -26,24 +26,6 @@ export function TextInput({ value, onChange, deleteItem, color, align, fontWeigh
             required={false}
           />
           <InputComponentDefault
-            id="right"
-            title="Right"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.right}
-            required={false}
-          />
-          <InputComponentDefault
-            id="bottom"
-            title="Bottom"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.bottom}
-            required={false}
-          />
-          <InputComponentDefault
             id="left"
             title="Left"
             type="number"

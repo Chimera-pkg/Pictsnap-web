@@ -3,3 +3,18 @@
 @tailwind utilities;
 
 @import url(https://fonts.googleapis.com/css2?family=Architects+Daughter&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=fallback);
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets/fonts/Poppins.ttf');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway.ttf');
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('./assets/fonts/Nunito.ttf');
+}

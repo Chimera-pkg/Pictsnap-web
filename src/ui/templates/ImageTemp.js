@@ -9,9 +9,7 @@ export function ImageLogoTemp({ item, colors }) {
     <div
       className={`absolute overflow-hidden left-[${
         item.left * ratioTemplate
-      }px] top-[${item.top * ratioTemplate}px] right-[${
-        item.right * ratioTemplate
-      }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
+      }px] top-[${item.top * ratioTemplate}px] w-[${
         item.width * ratioTemplate
       }px] h-[${item.height * ratioTemplate}px] bg-opacity-0
       }] `}
@@ -32,9 +30,7 @@ export function ImageSquareTemp({ item, colors }) {
     <div
       className={`absolute overflow-hidden left-[${
         item.left * ratioTemplate
-      }px] top-[${item.top * ratioTemplate}px] right-[${
-        item.right * ratioTemplate
-      }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
+      }px] top-[${item.top * ratioTemplate}px] w-[${
         item.width * ratioTemplate
       }px] h-[${item.height * ratioTemplate}px] bg-[#${
         colors[item.groupColor]
@@ -58,9 +54,7 @@ export function ImageSquareRoundedTemp({ item, colors }) {
     <div
       className={`absolute overflow-hidden left-[${
         item.left * ratioTemplate
-      }px] top-[${item.top * ratioTemplate}px] right-[${
-        item.right * ratioTemplate
-      }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
+      }px] top-[${item.top * ratioTemplate}px] w-[${
         item.width * ratioTemplate
       }px] h-[${item.height * ratioTemplate}px] bg-[#${
         colors[item.groupColor]
@@ -90,7 +84,7 @@ export function ImageCircleTemp({ item, colors }) {
     <div
       className={`absolute overflow-hidden ${horizontal} top-[${
         item.top * ratioTemplate
-      }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
+      }px] w-[${
         item.width * ratioTemplate
       }px] h-[${item.height * ratioTemplate}px] bg-[#${
         colors[item.groupColor]
@@ -113,9 +107,7 @@ export function ImageStaticTemp({ item }) {
     <div
       className={`absolute overflow-hidden left-[${
         item.left * ratioTemplate
-      }px] top-[${item.top * ratioTemplate}px] right-[${
-        item.right * ratioTemplate
-      }px] bottom-[${item.bottom * ratioTemplate}px] w-[${
+      }px] top-[${item.top * ratioTemplate}px] w-[${
         item.width * ratioTemplate
       }px] h-[${item.height * ratioTemplate}px]
       }] `}

@@ -9,12 +9,8 @@ export function FrameTemp({ item, colors }) {
     <div
       className={`absolute left-[${
         item.left == null ? undefined : item.left * ratioTemplate
-      }px] right-[${
-        item.right == null ? undefined : item.right * ratioTemplate
       }px] top-[${
         item.top == null ? undefined : item.top * ratioTemplate
-      }px] bottom-[${
-        item.bottom == null ? undefined : item.bottom * ratioTemplate
       }px]`}
     >
       <SVG

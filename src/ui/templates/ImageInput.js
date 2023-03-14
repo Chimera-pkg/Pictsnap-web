@@ -29,24 +29,6 @@ export function ImageLogoInput({ value, onChange, deleteItem, color}) {
             required={false}
           />
           <InputComponentDefault
-            id="right"
-            title="Right"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.right}
-            required={false}
-          />
-          <InputComponentDefault
-            id="bottom"
-            title="Bottom"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.bottom}
-            required={false}
-          />
-          <InputComponentDefault
             id="left"
             title="Left"
             type="number"
@@ -125,24 +107,6 @@ export function ImageSquareInput({ value, onChange, deleteItem, color}) {
             onChange={onChange}
             placeholder="px"
             value={value.top}
-            required={false}
-          />
-          <InputComponentDefault
-            id="right"
-            title="Right"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.right}
-            required={false}
-          />
-          <InputComponentDefault
-            id="bottom"
-            title="Bottom"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.bottom}
             required={false}
           />
           <InputComponentDefault
@@ -240,24 +204,6 @@ export function ImageSquareRoundedInput({
             onChange={onChange}
             placeholder="px"
             value={value.top}
-            required={false}
-          />
-          <InputComponentDefault
-            id="right"
-            title="Right"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.right}
-            required={false}
-          />
-          <InputComponentDefault
-            id="bottom"
-            title="Bottom"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.bottom}
             required={false}
           />
           <InputComponentDefault
@@ -362,24 +308,6 @@ export function ImageCircleInput({ value, onChange, deleteItem, color }) {
             required={false}
           />
           <InputComponentDefault
-            id="right"
-            title="Right"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.right}
-            required={false}
-          />
-          <InputComponentDefault
-            id="bottom"
-            title="Bottom"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.bottom}
-            required={false}
-          />
-          <InputComponentDefault
             id="left"
             title="Left"
             type="number"
@@ -469,24 +397,6 @@ export function ImageStaticInput({ value, onChange, deleteItem }) {
             onChange={onChange}
             placeholder="px"
             value={value.top}
-            required={false}
-          />
-          <InputComponentDefault
-            id="right"
-            title="Right"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.right}
-            required={false}
-          />
-          <InputComponentDefault
-            id="bottom"
-            title="Bottom"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.bottom}
             required={false}
           />
           <InputComponentDefault

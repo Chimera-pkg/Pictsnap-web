@@ -26,24 +26,6 @@ export function ContainerSquareInput({ value, onChange, deleteItem, color }) {
             required={false}
           />
           <InputComponentDefault
-            id="right"
-            title="Right"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.right}
-            required={false}
-          />
-          <InputComponentDefault
-            id="bottom"
-            title="Bottom"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.bottom}
-            required={false}
-          />
-          <InputComponentDefault
             id="left"
             title="Left"
             type="number"
@@ -123,24 +105,6 @@ export function ContainerSquareRoundedInput({ value, onChange, deleteItem,color 
             onChange={onChange}
             placeholder="px"
             value={value.top}
-            required={false}
-          />
-          <InputComponentDefault
-            id="right"
-            title="Right"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.right}
-            required={false}
-          />
-          <InputComponentDefault
-            id="bottom"
-            title="Bottom"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.bottom}
             required={false}
           />
           <InputComponentDefault
@@ -231,24 +195,6 @@ export function ContainerCircleInput({ value, onChange, deleteItem, color }) {
             onChange={onChange}
             placeholder="px"
             value={value.top}
-            required={false}
-          />
-          <InputComponentDefault
-            id="right"
-            title="Right"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.right}
-            required={false}
-          />
-          <InputComponentDefault
-            id="bottom"
-            title="Bottom"
-            type="number"
-            onChange={onChange}
-            placeholder="px"
-            value={value.bottom}
             required={false}
           />
           <InputComponentDefault

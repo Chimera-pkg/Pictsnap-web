@@ -8,8 +8,6 @@ export function ContainerSquareTemp({ item, colors }) {
     <div
       className={`absolute left-[${item.left * ratioTemplate}px] top-[${
         item.top * ratioTemplate
-      }px] right-[${item.right * ratioTemplate}px] bottom-[${
-        item.bottom * ratioTemplate
       }px] w-[${item.width * ratioTemplate}px] h-[${
         item.height * ratioTemplate
       }px] bg-[#${colors[item.groupColor]}] border border-[#${
@@ -26,8 +24,6 @@ export function ContainerSquareRoundedTemp({ item, colors }) {
     <div
       className={`absolute left-[${item.left * ratioTemplate}px] top-[${
         item.top * ratioTemplate
-      }px] right-[${item.right * ratioTemplate}px] bottom-[${
-        item.bottom * ratioTemplate
       }px] w-[${item.width * ratioTemplate}px] h-[${
         item.height * ratioTemplate
       }px] bg-[#${colors[item.groupColor]}] rounded-[${
@@ -46,8 +42,6 @@ export function ContainerCircleTemp({ item, colors }) {
     <div
       className={`absolute left-[${item.left * ratioTemplate}px] top-[${
         item.top * ratioTemplate
-      }px] right-[${item.right * ratioTemplate}px] bottom-[${
-        item.bottom * ratioTemplate
       }px] w-[${item.width * ratioTemplate}px] h-[${
         item.height * ratioTemplate
       }px] bg-[#${colors[item.groupColor]}] rounded-full border border-[#${
